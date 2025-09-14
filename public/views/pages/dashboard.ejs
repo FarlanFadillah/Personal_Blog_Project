@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('../partials/header')%>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+<div class="container my-4">
+    <!-- Dashboard Header -->
+    <h2 class="text-center mb-4">Dashboard</h2>
+
+    <!-- Cards Row -->
+    <div class="row justify-content-center g-4 mb-5">
+        <!-- New Article -->
+        <div class="col-md-4">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Create New Article</h5>
+                    <p class="card-text">Write and publish a brand new article.</p>
+                    <a href="/admin/article/new" class="btn btn-primary w-100">New Article</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Articles -->
+        <div class="col-md-4">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Articles</h5>
+                    <p class="card-text">Edit or delete existing articles.</p>
+                    <a href="/admin/article/edit/2" class="btn btn-secondary w-100">View Articles</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="col-md-4">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Settings</h5>
+                    <p class="card-text">Manage your account and preferences.</p>
+                    <a href="/settings" class="btn btn-outline-secondary w-100">Settings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Articles List -->
+    <div class="card shadow" id="articles">
+        <div class="card-body">
+            <h5 class="card-title mb-3">Your Articles</h5>
+
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Example row -->
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>My First Article</td>
+                        <td>2025-09-14</td>
+                        <td>
+                            <a href="/edit/1" class="btn btn-sm btn-warning">Edit</a>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Second Post</td>
+                        <td>2025-09-13</td>
+                        <td>
+                            <a href="/edit/2" class="btn btn-sm btn-warning">Edit</a>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

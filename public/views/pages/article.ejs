@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('../partials/header')%>
+<body class="bg-light d-flex flex-column min-vh-100">
+    <div class="container my-auto">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4 text-center"><%=title%></h3>
+
+                        <form action="<%=route%>" method="post">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Article Title</label>
+                                <input type="text" name="title" class="form-control" id="title" placeholder="Enter title">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Publishing Date</label>
+                                <input type="date" class="form-control" id="date">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="content" class="form-label">Content</label>
+                                <textarea class="form-control" name="content" id="content" rows="6" placeholder="Write your content here"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">Publish</button>
+                            <a href="/admin/dashboard" class="btn btn-danger w-100 mt-3">Cancel</a>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

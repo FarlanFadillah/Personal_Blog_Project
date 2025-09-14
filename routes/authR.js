@@ -1,0 +1,23 @@
+const router = require("express").Router();
+const authController = require("../controllers/authC");
+
+// prevent user to access the root route
+router.get('/', (req, res) => {
+    if(!req.session.isAuthenticated) res.redirect('/login');
+})
+
+router.route('/login')
+    .get(authController.renderLoginForm)
+    .post(authController.login);
+
+router.route('/logout').post(authController.logout);
+
+
+// Not used
+// router.route('/register')
+//     .get(authController.renderRegisterForm)
+//     .post(authController.checkUser, authController.register);
+
+
+
+module.exports = router;
