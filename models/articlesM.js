@@ -23,7 +23,7 @@ db.serialize(() => {
 
 function getAllArticles() {
     return new Promise((resolve, reject) => {
-        db.all('SELECT id, title, createdAt FROM articles', [], (err, rows) => {
+        db.all('SELECT id, title, createdAt, filePath FROM articles', [], (err, rows) => {
             if(err) reject(err);
             resolve(rows);
         })
@@ -75,6 +75,15 @@ function readJson(path){
         readFile(path, 'utf-8', (err, data)=>{
             if(err) reject(err);
             resolve(JSON.parse(data.toString()));
+        })
+    })
+}
+
+function readJson(path, key){
+    return new Promise((resolve, reject)=>{
+        readFile(path, 'utf-8', (err, data)=>{
+            if(err) reject(err);
+            resolve(JSON.parse(data.toString())[key]);
         })
     })
 }

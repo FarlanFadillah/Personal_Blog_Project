@@ -3,7 +3,7 @@ const authController = require("../controllers/authC");
 
 // prevent user to access the root route
 router.get('/', (req, res) => {
-    if(!req.session.isAuthenticated) res.redirect('/login');
+    res.redirect('/auth/login');
 })
 
 router.route('/login')
