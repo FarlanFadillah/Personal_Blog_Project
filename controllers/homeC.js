@@ -1,7 +1,11 @@
-
-function renderHomePage(req, res, next){
-    if(!req.session.isAuthenticated) return res.redirect('/auth/login');
-    res.render('pages/home', {msg : null, user : req.session.user});
+const articleModel = require("../models/articlesM");
+async function renderHomePage(req, res, next){
+    try{
+        const articles = await articleModel.getAllArticles();
+        res.status(200).render('pages/home', {msg : null, articles : articles});
+    }catch(err){
+        next(err);
+    }
 }
 
 module.exports = {renderHomePage}

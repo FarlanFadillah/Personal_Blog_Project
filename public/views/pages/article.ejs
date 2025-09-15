@@ -12,7 +12,11 @@
                         <form action="<%=route%>" method="post">
                             <div class="mb-3">
                                 <label for="title" class="form-label">Article Title</label>
-                                <input type="text" name="title" class="form-control" id="title" placeholder="Enter title">
+                                <%if(article_title){%>
+                                    <input type="text" name="title" class="form-control" id="title" placeholder="Enter title" value="<%=article_title%>">
+                                <%} else {%>
+                                    <input type="text" name="title" class="form-control" id="title" placeholder="Enter title">
+                                <%}%>
                             </div>
 
                             <div class="mb-3">
@@ -22,7 +26,11 @@
 
                             <div class="mb-3">
                                 <label for="content" class="form-label">Content</label>
-                                <textarea class="form-control" name="content" id="content" rows="6" placeholder="Write your content here"></textarea>
+                                <%if(content){%>
+                                    <textarea class="form-control" name="content" id="content" rows="6" placeholder="Write your content here"><%=content%></textarea>
+                                <%} else {%>
+                                    <textarea class="form-control" name="content" id="content" rows="6" placeholder="Write your content here"></textarea>
+                                <%}%>
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100">Publish</button>

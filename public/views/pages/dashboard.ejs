@@ -20,17 +20,6 @@
             </div>
         </div>
 
-        <!-- Manage Articles -->
-        <div class="col-md-4">
-            <div class="card shadow text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Manage Articles</h5>
-                    <p class="card-text">Edit or delete existing articles.</p>
-                    <a href="/admin/article/edit/2" class="btn btn-secondary w-100">View Articles</a>
-                </div>
-            </div>
-        </div>
-
         <!-- Settings -->
         <div class="col-md-4">
             <div class="card shadow text-center">
@@ -59,29 +48,27 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <%for(let [i, value] of articles.entries()){%>
                     <!-- Example row -->
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>My First Article</td>
-                        <td>2025-09-14</td>
-                        <td>
-                            <a href="/edit/1" class="btn btn-sm btn-warning">Edit</a>
-                            <button class="btn btn-sm btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Second Post</td>
-                        <td>2025-09-13</td>
-                        <td>
-                            <a href="/edit/2" class="btn btn-sm btn-warning">Edit</a>
-                            <button class="btn btn-sm btn-danger">Delete</button>
-                        </td>
-                    </tr>
+                        <tr>
+                            <th scope="row"><%=i+=1%></th>
+                            <td><%=value.title%></td>
+                            <td><%=value.createdAt%></td>
+                            <td>
+                                <a href="/admin/article/edit/<%=value.id%>" class="btn btn-sm btn-warning">Edit</a>
+
+                                <button class="btn btn-sm btn-danger" onclick="document.getElementById('delete_form').submit()" type="submit">Delete</button>
+                                <form id="delete_form" action="/admin/article/delete/<%=value.id%>" method="post"></form>
+                            </td>
+                        </tr>
+                    <%}%>
                     <!-- Add more rows dynamically -->
                     </tbody>
                 </table>
+
             </div>
+            <button class="btn btn-sm btn-dark" onclick="document.getElementById('logout_form').submit()" type="submit">Logout</button>
+            <form id="logout_form" action="/auth/logout" method="post"></form>
         </div>
     </div>
 

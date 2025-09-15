@@ -40,6 +40,7 @@ app.get('/', (req, res) => {
 
 // handling the route that does not exist
 app.use((req, res)=>{
+    // console.log(req.url);
     res.send('oops the route does not exist ');
 });
 

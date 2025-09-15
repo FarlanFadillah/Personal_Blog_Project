@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3');
-const {readFile, writeFile} = require('fs');
+const {readFile, writeFile, unlink} = require('fs');
 const db = new sqlite3.Database('./db/main.sqlite3', (err) => {
     if(err) console.log(err.message);
     console.log('Articles Database Connected');
@@ -23,7 +23,7 @@ db.serialize(() => {
 
 function getAllArticles() {
     return new Promise((resolve, reject) => {
-        db.all('SELECT * FROM articles', [], (err, rows) => {
+        db.all('SELECT id, title, createdAt FROM articles', [], (err, rows) => {
             if(err) reject(err);
             resolve(rows);
         })
@@ -32,7 +32,7 @@ function getAllArticles() {
 
 function getArticleById(id) {
     return new Promise((resolve, reject) => {
-        db.get(`SELECT id FROM articles WHERE id = ?`,[id], (err, row) => {
+        db.get(`SELECT title, filePath FROM articles WHERE id = ?`,[id], (err, row) => {
             if(err) reject(err);
             resolve(row);
         })
@@ -74,25 +74,40 @@ function readJson(path){
     return new Promise((resolve, reject)=>{
         readFile(path, 'utf-8', (err, data)=>{
             if(err) reject(err);
-            resolve(data);
+            resolve(JSON.parse(data.toString()));
         })
     })
 }
 
-function writeJson(path, data){
-    return new Promise((resolve, reject)=>{
-
+async function deleteArticleDbs(id) {
+    return new Promise((resolve, reject) => {
+        db.run(`DELETE FROM articles WHERE id = ?`,[id], (err) => {
+            if(err) reject(err);
+            resolve(null);
+        })
     })
 }
 
-async function getArticles(path){
-    try {
-        const articles = await readJson(path);
-        return new Promise((resolve, reject)=>{
-
+function deleteArticleJson(path) {
+    return new Promise((resolve, reject) => {
+        unlink(path, (err)=>{
+            if(err) reject(err);
+            resolve(null);
         })
-    }catch(err){
+    })
+}
 
+async function editArticleJson(path, title, content, id) {
+    try{
+        await writeArticleToJson(path, title, content);
+        return new Promise((resolve, reject) => {
+            db.run(`UPDATE articles SET title = ? where id = ?`, [title, id], (err) => {
+                if(err) reject(err);
+                resolve(null);
+            })
+        })
+    }catch (err){
+        throw err;
     }
 }
 
@@ -100,6 +115,10 @@ module.exports = {
     getAllArticles,
     getArticleById,
     createArticle,
-    writeArticleToJson
+    writeArticleToJson,
+    readJson,
+    deleteArticleDbs,
+    deleteArticleJson,
+    editArticleJson,
 }
 

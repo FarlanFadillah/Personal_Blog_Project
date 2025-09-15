@@ -16,7 +16,8 @@ const my_session = session({
     saveUninitialized: false,
     cookie: {
         maxAge: 1000 * 60 * 60, // one hour
-    }
+    },
+    rolling: true // <---- THIS refreshes the cookie on every response
 });
 
 module.exports = my_session;
