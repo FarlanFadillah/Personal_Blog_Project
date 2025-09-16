@@ -90,4 +90,6 @@
 > * ✅ Add image uploads for posts
 > * ✅ Improve security (CSRF protection, input sanitization)
 > * ✅ Create REST API endpoints for external clients
+>
+> https://roadmap.sh/projects/personal-blog
 
