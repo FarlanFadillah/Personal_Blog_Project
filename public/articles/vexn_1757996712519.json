@@ -1,0 +1,5 @@
+{
+  "title": "Welcome to My Blog",
+  "content": "Welcome to My Blog\r\n===\r\nHey there! 👋 This is my very first article written in **Markdown**.\r\n\r\n---\r\n\r\n## Why Markdown?\r\n\r\n- It's simple\r\n- It's readable even in raw form\r\n- It's perfect for blogs\r\n\r\n---\r\n\r\n## Example Code\r\n\r\nLet's print something in JavaScript:\r\n\r\n```js\r\nconsole.log(\"Hello from Markdown!\");\r\n```\r\n",
+  "status": "published"
+}

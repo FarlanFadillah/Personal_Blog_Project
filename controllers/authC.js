@@ -1,5 +1,5 @@
 const authM = require('../models/authM');
-const hasher = require('../services/hashing');
+const hasher = require('../utils/hashing');
 const asyncHandler = require('../utils/asyncHandler');
 
 function renderLoginForm(req, res){
@@ -7,6 +7,12 @@ function renderLoginForm(req, res){
     if(req.session.isAuthenticated) return res.redirect('/home')
     res.status(200).render('pages/login', {msg : null});
 }
+
+function renderAccountSettingPage (req, res, next) {
+    console.log(req.session.user);
+    res.status(200).render('pages/settings', {user: req.session.user});
+}
+
 const login = asyncHandler(async (req, res, next) => {
     const {username, password} = req.body;
 
@@ -23,6 +29,9 @@ const login = asyncHandler(async (req, res, next) => {
     req.session.user = {
         username : user.username,
         isAdmin : user.isAdmin,
+        email : user.email,
+        first_name : user.first_name,
+        last_name : user.last_name
     }
     req.session.isAuthenticated = true;
     res.status(200).redirect('/admin/dashboard');
@@ -33,6 +42,21 @@ function logout(req, res) {
     req.session.destroy();
     res.redirect('/auth/login');
 }
+
+const updateUser = asyncHandler(async (req, res) => {
+    const {username, first_name, last_name, email} = req.body;
+
+    await authM.updateUser(req.session.user.username, username, first_name, last_name, email);
+    req.session.user = {
+        username : username,
+        isAdmin : req.session.user.isAdmin,
+        email : email,
+        first_name : first_name,
+        last_name : last_name
+    }
+    req.session.isAuthenticated = true;
+    res.status(200).redirect('/admin/dashboard');
+})
 
 
 
@@ -70,5 +94,5 @@ function logout(req, res) {
 
 
 module.exports = {
-    login, logout, renderLoginForm
+    login, logout, renderLoginForm, renderAccountSettingPage, updateUser
 }

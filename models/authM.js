@@ -1,4 +1,5 @@
 const sqlite3 = require('sqlite3');
+const asyncHandler = require("../utils/asyncHandler");
 
 const db = new sqlite3.Database('./db/main.sqlite3', (err) => {
     if(err) console.log(err.message);
@@ -20,7 +21,7 @@ db.serialize(() => {
     })
 })
 
-async function addUser(username, first_name, last_name, email, salt, hash, isAdmin = false){
+function addUser(username, first_name, last_name, email, salt, hash, isAdmin = false){
     return new Promise((resolve, reject)=>{
         // console.log("Adding user");
         db.run('INSERT INTO users (username, first_name, last_name, isAdmin, email, salt, hash) VALUES (?, ?, ?, ?, ?, ?, ?)', [username, first_name, last_name, isAdmin, email, salt, hash], (err)=>{
@@ -30,7 +31,7 @@ async function addUser(username, first_name, last_name, email, salt, hash, isAdm
     })
 }
 
-async function getUser(username){
+function getUser(username){
     return new Promise((resolve, reject)=>{
         // console.log('Getting user');
         db.get(`SELECT * FROM users WHERE username = ?`, [username], (err, result)=>{
@@ -40,5 +41,15 @@ async function getUser(username){
     })
 }
 
+function updateUser(old_username, new_username, first_name, last_name, email) {
 
-module.exports = {addUser, getUser}
+    return new Promise((resolve, reject)=>{
+        db.run(`UPDATE users SET username = ?, first_name = ?, last_name = ?, email = ? WHERE username = ?`, [new_username, first_name, last_name, email, old_username], (err)=>{
+            if(err) reject(err);
+            resolve(null);
+        })
+    })
+}
+
+
+module.exports = {addUser, getUser, updateUser}

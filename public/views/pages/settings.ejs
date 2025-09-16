@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header') %>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+<div class="container my-4">
+    <!-- Settings Header -->
+    <h2 class="text-center mb-4">Account Settings</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Profile Information</h5>
+
+                    <form action="/auth/settings" method="post">
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" value="<%= user.username %>" required>
+                        </div>
+
+                        <!-- First Name -->
+                        <div class="mb-3">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" value="<%= user.first_name %>" required>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="mb-3">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" value="<%= user.last_name %>" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" required>
+                        </div>
+
+                        <!-- Save Button -->
+                        <button type="submit" class="btn btn-primary w-100">Save Changes</button>
+                    </form>
+
+                    <hr class="my-4">
+
+                    <h5 class="card-title mb-3">Change Password</h5>
+
+                    <form action="/settings/change-password" method="post">
+                        <!-- Current Password -->
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword" name="currentPassword" required>
+                        </div>
+
+                        <!-- New Password -->
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+
+                        <!-- Change Password Button -->
+                        <button type="submit" class="btn btn-warning w-100">Update Password</button>
+                    </form>
+
+                    <hr class="my-4">
+
+                    <!-- Danger Zone -->
+                    <h5 class="card-title text-danger mb-3">Danger Zone</h5>
+                    <p class="text-muted">Deleting your account is permanent and cannot be undone.</p>
+                    <form action="/settings/delete-account" method="post" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+                        <button type="submit" class="btn btn-danger w-100">Delete Account</button>
+                    </form>
+                </div>
+            </div>
+
+            <a href="/admin/dashboard" class="btn btn-outline-secondary w-100 mt-3">Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

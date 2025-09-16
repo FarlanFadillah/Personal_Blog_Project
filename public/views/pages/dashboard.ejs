@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Settings</h5>
                     <p class="card-text">Manage your account and preferences.</p>
-                    <a href="/settings" class="btn btn-outline-secondary w-100">Settings</a>
+                    <a href="/auth/settings" class="btn btn-outline-secondary w-100">Settings</a>
                 </div>
             </div>
         </div>
@@ -34,9 +34,9 @@
 
     <!-- Articles List -->
     <div class="card shadow" id="articles">
+        <a href="/home" class="btn btn-primary">Home Page</a>
         <div class="card-body">
             <h5 class="card-title mb-3">Your Articles</h5>
-
             <div class="table-responsive">
                 <table class="table table-striped align-middle">
                     <thead class="table-dark">
@@ -57,8 +57,8 @@
                             <td>
                                 <a href="/admin/article/edit/<%=value.id%>" class="btn btn-sm btn-warning">Edit</a>
 
-                                <button class="btn btn-sm btn-danger" onclick="document.getElementById('delete_form').submit()" type="submit">Delete</button>
-                                <form id="delete_form" action="/admin/article/delete/<%=value.id%>" method="post"></form>
+                                <button class="btn btn-sm btn-danger" onclick="deleteArticle(<%=value.id%>)" id="delete_btn" type="submit">Delete</button>
+                                <form id="delete_form_<%=value.id%>" action="/admin/article/delete/<%=value.id%>" method="post"></form>
                             </td>
                         </tr>
                     <%}%>
@@ -73,6 +73,6 @@
     </div>
 
 </div>
-
+    <script src="/dashboard.js"></script>
 </body>
 </html>

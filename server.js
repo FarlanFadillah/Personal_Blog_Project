@@ -23,7 +23,7 @@ app.set('views', path.join(__dirname, 'public/views'));
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public/static')));
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session);
@@ -33,15 +33,13 @@ app.use('/admin', dashboardRouter);
 app.use('/home', homeRouter);
 
 app.get('/', (req, res) => {
-    if(!req.session.isAuthenticated) return res.redirect('/auth/login');
     res.redirect('/home');
 })
 
 
 // handling the route that does not exist
 app.use((req, res)=>{
-    // console.log(req.url);
-    res.send('oops the route does not exist ');
+    res.status(400).send('oops the route does not exist ');
 });
 
 

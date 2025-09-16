@@ -11,6 +11,8 @@ const renderDashboardPage = asyncHandler( async(req, res, next)=> {
     res.status(200).render('pages/dashboard');
 });
 
+
+
 function renderNewArticlePage(req, res) {
     res.status(200).render('pages/article', {
             title : 'New Article',
@@ -21,13 +23,14 @@ function renderNewArticlePage(req, res) {
 
 const renderEditArticlePage = asyncHandler(async (req, res, next) => {
     const {id} = req.params;
-    if(!id) return redirectToDashboard(res);
+    if(id === undefined) return redirectToDashboard(res);
     
     const article = await articleModel.getArticleById(id);
-    if(!article) redirectToDashboard(res);
+    if(!article) return redirectToDashboard(res);
 
     const content = await articleModel.readJson(article.filePath);
-    if(!content) redirectToDashboard(res);
+
+    if(!content) return redirectToDashboard(res);
 
     res.status(200).render('pages/article', {
         title : 'Edit Article',

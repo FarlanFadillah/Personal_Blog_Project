@@ -11,6 +11,7 @@ router.route('/login')
     .post(authController.login);
 
 router.route('/logout').post(authController.logout);
+router.route('/settings').get(authController.renderAccountSettingPage).post(authController.updateUser);
 
 
 // Not used

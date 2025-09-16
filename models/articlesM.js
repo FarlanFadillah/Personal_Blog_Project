@@ -3,6 +3,7 @@ const {readFile, writeFile, unlink} = require('fs');
 const db = new sqlite3.Database('./db/main.sqlite3', (err) => {
     if(err) console.log(err.message);
     console.log('Articles Database Connected');
+    db.run("PRAGMA foreign_keys=ON");
 })
 
 db.serialize(() => {
@@ -13,7 +14,7 @@ db.serialize(() => {
                 createdAt DATETIME NOT NULL,
                 updatedAt DATETIME NOT NULL,
                 username TEXT NOT NULL,
-                FOREIGN KEY (username) REFERENCES users(username) 
+                FOREIGN KEY (username) REFERENCES users(username) ON UPDATE CASCADE 
                 )`,
         (err)=>{
             if(err) console.log(__dirname, err.message);
@@ -32,13 +33,27 @@ function getAllArticles() {
 
 function getArticleById(id) {
     return new Promise((resolve, reject) => {
-        db.get(`SELECT title, filePath FROM articles WHERE id = ?`,[id], (err, row) => {
+        db.get(`SELECT * FROM articles WHERE id = ?`,[id], (err, row) => {
             if(err) reject(err);
             resolve(row);
         })
     })
 }
 
+const validationColumn = ['id', 'title', 'filePath', 'createdAt', 'updatedAt', 'username'];
+function getArticleByIdWithSpecificColumn(id, columns) {
+
+    const filteredColumns = columns.filter(col => validationColumn.includes(col));
+    if(!filteredColumns.length) throw new Error('No valid columns requested');
+
+
+    return new Promise((resolve, reject) => {
+        db.get(`SELECT ${filteredColumns.join(',')} FROM articles WHERE id = ?`,[id], (err, row) => {
+            if(err) reject(err);
+            resolve(row);
+        })
+    })
+}
 async function createArticle(title, path, username) {
     try{
         return new Promise((resolve, reject) => {
@@ -79,7 +94,7 @@ function readJson(path){
     })
 }
 
-function readJson(path, key){
+function readJsonKeyValue(path, key){
     return new Promise((resolve, reject)=>{
         readFile(path, 'utf-8', (err, data)=>{
             if(err) reject(err);
@@ -110,7 +125,7 @@ async function editArticleJson(path, title, content, id) {
     try{
         await writeArticleToJson(path, title, content);
         return new Promise((resolve, reject) => {
-            db.run(`UPDATE articles SET title = ? where id = ?`, [title, id], (err) => {
+            db.run(`UPDATE articles SET title = ?, updatedAt = datetime('now', 'localtime') where id = ?`, [title, id], (err) => {
                 if(err) reject(err);
                 resolve(null);
             })
@@ -129,5 +144,7 @@ module.exports = {
     deleteArticleDbs,
     deleteArticleJson,
     editArticleJson,
+    readJsonKeyValue,
+    getArticleByIdWithSpecificColumn
 }
 
