@@ -10,7 +10,6 @@
 >
 > * 📝 **Create, Read, Update, Delete (CRUD)** blog posts
 > * 👤 **User authentication** (Login, Logout, Session handling)
-> * 🗂️ **Categories & Tags** for organizing posts
 > * 🧑‍💻 **Admin dashboard** to manage users and posts
 > * 💾 **SQLite3 database** with proper schema and foreign key constraints
 > * 🖼️ **EJS templates** for clean and responsive UI
@@ -32,22 +31,13 @@
 >    npm install
 >    ```
 >
-> 3. **Setup database**
->    Make sure you have `sqlite3` installed. Run:
->
->    ```bash
->    node scripts/initDB.js
->    ```
->
->    *(Or run any migration script you have to initialize tables)*
->
-> 4. **Start the server**
+> 3. **Start the server**
 >
 >    ```bash
 >    npm start
 >    ```
 >
-> 5. Open your browser and visit:
+> 4. Open your browser and visit:
 >    [http://localhost:3000](http://localhost:3000)
 >
 > ---
@@ -60,7 +50,8 @@
 > ├── models/           # Database models (SQLite3 queries)
 > ├── public/           # Static files (CSS, JS, images)
 > ├── routes/           # Express route definitions
-> ├── views/            # EJS templates
+> ├── middlewares/      # Contain all custom middlewares
+> ├── views/            # EJS templates, and static files (css, js)
 > ├── scripts/          # Database initialization or utility scripts
 > ├── app.js            # Main Express app
 > ├── package.json
