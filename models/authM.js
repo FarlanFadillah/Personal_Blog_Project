@@ -4,10 +4,12 @@ const asyncHandler = require("../utils/asyncHandler");
 const db = new sqlite3.Database('./db/main.sqlite3', (err) => {
     if(err) console.log(err.message);
     console.log('Users Database Connected');
+    db.run("PRAGMA foreign_keys = ON", (err)=>{
+        if(err) console.log(err.message);
+    });
 })
 
 db.serialize(() => {
-
     db.run(`CREATE TABLE IF NOT EXISTS users (
                 username TEXT PRIMARY KEY,
                 first_name TEXT,
@@ -41,9 +43,20 @@ function getUser(username){
     })
 }
 
+function getUserByEmail(email){
+    return new Promise((resolve, reject)=>{
+        // console.log('Getting user');
+        db.get(`SELECT * FROM users WHERE email = ?`, [email], (err, result)=>{
+            if(err) reject(err);
+            resolve(result);
+        })
+    })
+}
+
 function updateUser(old_username, new_username, first_name, last_name, email) {
 
     return new Promise((resolve, reject)=>{
+        
         db.run(`UPDATE users SET username = ?, first_name = ?, last_name = ?, email = ? WHERE username = ?`, [new_username, first_name, last_name, email, old_username], (err)=>{
             if(err) reject(err);
             resolve(null);
@@ -52,4 +65,4 @@ function updateUser(old_username, new_username, first_name, last_name, email) {
 }
 
 
-module.exports = {addUser, getUser, updateUser}
+module.exports = {addUser, getUser, updateUser, getUserByEmail}

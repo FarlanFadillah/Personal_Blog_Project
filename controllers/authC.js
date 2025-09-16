@@ -16,8 +16,11 @@ function renderAccountSettingPage (req, res, next) {
 const login = asyncHandler(async (req, res, next) => {
     const {username, password} = req.body;
 
-    //getting the user by username
-    const user = await authM.getUser(username);
+    //getting the user by username/email
+    // by checking the username string is contained '@' or no
+    let user = [];
+    if(username.includes('@')) user = await authM.getUserByEmail(username);
+    else user = await authM.getUser(username);
 
     // check if user is existing
     if(user === undefined) throw new Error(`User not found!`);
@@ -34,7 +37,7 @@ const login = asyncHandler(async (req, res, next) => {
         last_name : user.last_name
     }
     req.session.isAuthenticated = true;
-    res.status(200).redirect('/admin/dashboard');
+    res.status(200).redirect('/admin');
 });
 
 function logout(req, res) {
@@ -55,7 +58,7 @@ const updateUser = asyncHandler(async (req, res) => {
         last_name : last_name
     }
     req.session.isAuthenticated = true;
-    res.status(200).redirect('/admin/dashboard');
+    res.status(200).redirect('/admin');
 })
 
 

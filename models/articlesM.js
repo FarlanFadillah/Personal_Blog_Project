@@ -3,23 +3,47 @@ const {readFile, writeFile, unlink} = require('fs');
 const db = new sqlite3.Database('./db/main.sqlite3', (err) => {
     if(err) console.log(err.message);
     console.log('Articles Database Connected');
-    db.run("PRAGMA foreign_keys=ON");
 })
 
 db.serialize(() => {
+    db.run('PRAGMA foreign_keys = OFF'); // disable during migration to avoid constraint errors
     db.run(`CREATE TABLE IF NOT EXISTS articles (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                title TEXT,
-                filePath TEXT NULL,
-                createdAt DATETIME NOT NULL,
-                updatedAt DATETIME NOT NULL,
-                username TEXT NOT NULL,
-                FOREIGN KEY (username) REFERENCES users(username) ON UPDATE CASCADE 
-                )`,
-        (err)=>{
-            if(err) console.log(__dirname, err.message);
-        })
-})
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT,
+        filePath TEXT,
+        createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        username TEXT NOT NULL,
+        FOREIGN KEY (username) REFERENCES users(username) ON UPDATE CASCADE
+    )`, (err) => {
+        if (err) return console.error("Create table error:", err.message);
+
+        // db.run(`INSERT INTO articles_new (id, title, filePath, createdAt, updatedAt, username)
+        //         SELECT id, title, filePath, createdAt, updatedAt, username FROM articles`, (err) => {
+        //     if (err) return console.error("Insert data error:", err.message);
+
+        //     db.run(`DROP TABLE articles`, (err) => {
+        //         if (err) return console.error("Drop table error:", err.message);
+
+        //         db.run(`ALTER TABLE articles_new RENAME TO articles`, (err) => {
+        //             if (err) return console.error("Rename table error:", err.message);
+
+        //             // Re-enable foreign keys AFTER migration
+        //             db.run('PRAGMA foreign_keys = ON', (err) => {
+        //                 if (err) return console.error("PRAGMA error:", err.message);
+
+        //                 // Verify foreign keys
+        //                 db.all(`PRAGMA foreign_key_list(articles);`, (err, rows) => {
+        //                     if (err) console.error("Error checking foreign key list:", err.message);
+        //                     else console.log("Foreign keys for articles:", rows);
+        //                 });
+        //             });
+        //         });
+        //     });
+        // });
+    });
+});
+
 
 
 function getAllArticles() {

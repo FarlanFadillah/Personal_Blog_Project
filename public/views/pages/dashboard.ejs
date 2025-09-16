@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Create New Article</h5>
                     <p class="card-text">Write and publish a brand new article.</p>
-                    <a href="/admin/article/new" class="btn btn-primary w-100">New Article</a>
+                    <a href="/article/new" class="btn btn-primary w-100">New Article</a>
                 </div>
             </div>
         </div>
@@ -55,10 +55,10 @@
                             <td><%=value.title%></td>
                             <td><%=value.createdAt%></td>
                             <td>
-                                <a href="/admin/article/edit/<%=value.id%>" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="/article/edit/<%=value.id%>" class="btn btn-sm btn-warning">Edit</a>
 
                                 <button class="btn btn-sm btn-danger" onclick="deleteArticle(<%=value.id%>)" id="delete_btn" type="submit">Delete</button>
-                                <form id="delete_form_<%=value.id%>" action="/admin/article/delete/<%=value.id%>" method="post"></form>
+                                <form id="delete_form_<%=value.id%>" action="/article/delete/<%=value.id%>" method="post"></form>
                             </td>
                         </tr>
                     <%}%>

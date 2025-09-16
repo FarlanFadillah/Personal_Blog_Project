@@ -1,5 +1,5 @@
 {
   "title": "Asynchandler Is Awesome",
-  "content": "Just learn about asynchandler using higher-order-function, much simpler.",
+  "content": "Just learned about asyncHandler with higher-order functions — so much simpler! No more writing try...catch everywhere, the code looks way cleaner now.",
   "status": "published"
 }

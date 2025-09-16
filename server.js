@@ -8,7 +8,8 @@ const path = require('path');
 // router modules
 const authRouter = require('./routes/authR');
 const dashboardRouter = require('./routes/adminR');
-const homeRouter = require('./routes/homeR');
+const rootRouter = require('./routes/rootR');
+const articleRouter = require('./routes/articleR');
 
 // middleware modules
 const session = require('./middlewares/session');
@@ -30,11 +31,9 @@ app.use(session);
 
 app.use('/auth', authRouter);
 app.use('/admin', dashboardRouter);
-app.use('/home', homeRouter);
+app.use('/article', articleRouter);
+app.use('/', rootRouter);
 
-app.get('/', (req, res) => {
-    res.redirect('/home');
-})
 
 
 // handling the route that does not exist
