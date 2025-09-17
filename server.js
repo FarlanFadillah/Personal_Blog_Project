@@ -11,6 +11,7 @@ const dashboardRouter = require('./routes/adminR');
 const rootRouter = require('./routes/rootR');
 const articleRouter = require('./routes/articleR');
 
+
 // middleware modules
 const session = require('./middlewares/session');
 const {updateAccountProfileError,
@@ -31,6 +32,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(session);
 
+app.use((req, res, next)=>{
+    res.locals.messages = req.session.messages || [];
+    req.session.messages = [];
+    next();
+})
 app.use('/auth', authRouter);
 app.use('/admin', dashboardRouter);
 app.use('/article', articleRouter);

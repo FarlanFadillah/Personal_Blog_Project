@@ -10,7 +10,6 @@ function renderNewArticlePage(req, res) {
 }
 
 const renderEditArticlePage = asyncHandler(async (req, res, next) => {
-
     const {id} = req.params;
     if(id === undefined) return redirectToDashboard(res);
     

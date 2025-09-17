@@ -1,7 +1,7 @@
 const validator = require('express-validator');
 
 const idValidator  =[
-    validator.param('id').isInt({min : 1}).withMessage('id must be a number')
+    validator.param('id').isNumeric({min : 1}).withMessage('id must be a number')
 ];
 
 const titleValidator = [

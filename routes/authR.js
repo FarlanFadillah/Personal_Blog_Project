@@ -8,8 +8,9 @@ const {renderLoginForm,
 const {loginValidator,
     updateAccountProfileValidator} = require('../validators/authV');
 
-const {validatorErrorHandler} = require('../middlewares/validatorErr')
-const {authentication} = require('../middlewares/authentication')
+const {validatorErrorHandler} = require('../middlewares/validatorErr');
+const {authentication} = require('../middlewares/authentication');
+const {addMessage} = require('../utils/flashMessage')
 
 
 // prevent user to access the root route
@@ -30,7 +31,7 @@ router.route('/settings')
 
 router.use((error, req, res, next) => {
     if(req.originalUrl === '/auth/login') {
-        req.session.msg = error.message;
+        addMessage(req, 'error', error.message)
         return res.redirect('/auth/login');
     }
     next(error);
@@ -39,7 +40,6 @@ router.use((error, req, res, next) => {
 
 router.use((error, req, res, next) =>{
     if(req.originalUrl === '/auth/settings') {
-        req.session.errors = error.details;
         return res.redirect('/auth/settings');
     }
     next(error);
