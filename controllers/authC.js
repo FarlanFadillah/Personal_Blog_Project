@@ -1,16 +1,14 @@
 const authM = require('../models/authM');
 const hasher = require('../utils/hashing');
 const asyncHandler = require('../utils/asyncHandler');
-
 function renderLoginForm(req, res){
     // check if user is authenticated by accessing the session property 'isAuthenticated'
     if(req.session.isAuthenticated) return res.redirect('/home')
-    res.status(200).render('pages/login', {msg : null});
+    res.status(200).render('pages/login', {msg : req.session.msg});
 }
 
 function renderAccountSettingPage (req, res, next) {
-    console.log(req.session.user);
-    res.status(200).render('pages/settings', {user: req.session.user});
+    res.status(200).render('pages/settings', {user: req.session.user, errors : req.session.errors});
 }
 
 const login = asyncHandler(async (req, res, next) => {
@@ -37,6 +35,7 @@ const login = asyncHandler(async (req, res, next) => {
         last_name : user.last_name
     }
     req.session.isAuthenticated = true;
+    req.session.errors = null;
     res.status(200).redirect('/admin');
 });
 
@@ -58,6 +57,7 @@ const updateUser = asyncHandler(async (req, res) => {
         last_name : last_name
     }
     req.session.isAuthenticated = true;
+    req.session.errors = null;
     res.status(200).redirect('/admin');
 })
 

@@ -13,7 +13,9 @@ const articleRouter = require('./routes/articleR');
 
 // middleware modules
 const session = require('./middlewares/session');
-const errorHandler = require('./middlewares/errors');
+const {updateAccountProfileError,
+    loginErrorHandler,
+    lastErrorHandler} = require('./middlewares/errors');
 
 const app = express();
 
@@ -43,7 +45,7 @@ app.use((req, res)=>{
 
 
 // errors handler middleware
-app.use(errorHandler.loginErrorHandler);
+app.use(lastErrorHandler)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server running on port http://localhost:${process.env.PORT}`);

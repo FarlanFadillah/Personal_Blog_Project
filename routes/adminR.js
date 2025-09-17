@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const dashboardController = require('../controllers/adminC');
+const {renderDashboardPage} = require('../controllers/adminC');
+const {authentication} = require('../middlewares/authentication');
 
-
-router.use(dashboardController.authentication);
-router.get('/', dashboardController.renderDashboardPage);
+router.use(authentication);
+router.get('/', renderDashboardPage);
 
 
 module.exports = router;

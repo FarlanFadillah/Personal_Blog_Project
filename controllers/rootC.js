@@ -9,8 +9,8 @@ const renderHomePage = asyncHandler(async (req, res, next) => {
         const content = await articleModel.readJsonKeyValue(article.filePath, 'content');
         article.content = makePreviewContent(content, 75);
     }
-    
-    res.status(200).render('pages/home', {msg : null, articles : articles});
+
+    res.status(200).render('pages/home', {articles : articles});
 });
 
 const renderArticlePage = asyncHandler(async (req, res, next) => {

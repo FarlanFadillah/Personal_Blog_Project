@@ -1,9 +1,13 @@
-function loginErrorHandler(error, req, res, next) {
-    if(req.originalUrl !== '/auth/login') next(error);
-    req.session.destroy();
-    res.render('pages/login', {msg : error.message});
+
+
+
+
+
+function lastErrorHandler(error, req, res, next) {
+    console.log(error)
+    res.status(400).send(error.message);
 }
 
 module.exports = {
-    loginErrorHandler
+    lastErrorHandler
 };
