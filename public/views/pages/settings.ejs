@@ -13,11 +13,9 @@
                 <div class="card-body">
                     <h5 class="card-title mb-3">Profile Information</h5>
 
-                    <%if(messages){%>
-                        <%for(msg of messages) {%>
-                            <div class="alert alert-danger mt-2"><%= msg.text %></div>
-                        <%}%>
-                    <%}%>
+                    <!--Flash Message Section-->
+                    <%-include('../partials/flash_message')%>
+
                     <form action="/auth/settings" method="post">
                         <!-- Username -->
                         <div class="mb-3">

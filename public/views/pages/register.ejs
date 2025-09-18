@@ -14,9 +14,8 @@
 
         <h2>Register Form</h2>
 
-        <%for(msg of messages) {%>
-            <div class="warning"><p><%=msg.text%></p></div>
-        <%}%>
+        <!--Flash Message Section-->
+        <%-include('../partials/flash_message')%>
 
         <div class="inputBox">
             <input type="text" name="username" required placeholder="" value="">
@@ -39,7 +38,7 @@
             <label>Password</label>
         </div>
         <div class="inputBox">
-            <input type="password" name="password2" required placeholder="" value="">
+            <input type="password" name="confirm_password" required placeholder="" value="">
             <label>Repeat Password</label>
         </div>
         <div class="button">

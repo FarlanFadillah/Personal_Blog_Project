@@ -3,15 +3,16 @@ const {renderLoginForm,
     login,
     logout,
     renderAccountSettingPage,
-    updateUser, renderRegisterForm, register
+    updateUser, renderRegisterForm, register, renderUserListPage, deleteUserByUsername
 } = require("../controllers/authC");
 
 const {loginValidator,
     accountProfileValidator,
-    passwordValidator} = require('../validators/authV');
+    passwordValidator, usernameValidator
+} = require('../validators/authV');
 
 const {validatorErrorHandler} = require('../middlewares/validatorErr');
-const {authentication} = require('../middlewares/authentication');
+const {authentication, adminAuthentication} = require('../middlewares/authentication');
 const {addMessage} = require('../utils/flashMessage')
 
 
@@ -32,10 +33,14 @@ router.route('/settings')
     .post(...accountProfileValidator, validatorErrorHandler, updateUser);
 
 router.route('/register')
-    .get(authentication, renderRegisterForm)
+    .get(adminAuthentication, renderRegisterForm)
     .post(...accountProfileValidator, ...passwordValidator, validatorErrorHandler, register);
 
+router.route('/users')
+    .get(adminAuthentication, renderUserListPage);
 
+router.route('/users/delete/:username')
+    .post(adminAuthentication, deleteUserByUsername);
 
 // ERROR HANDLER SECTION
 

@@ -39,11 +39,12 @@ const passwordValidator = [
         .optional({checkFalsy : true})
         .custom((value, {req}) =>{
             if(req.body.password && value !== req.body.password){
-                throw new Error('Password confirmation does not match password')
+                throw new Error('Password confirmation does not match password');
             }
             return true;
         })
 ]
+
 
 
 module.exports = {loginValidator, accountProfileValidator, passwordValidator}

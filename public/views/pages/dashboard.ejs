@@ -38,7 +38,8 @@
                     <div class="card-body">
                         <h5 class="card-title">User Management</h5>
                         <p class="card-text">Register a new user for writing articles.</p>
-                        <a href="/auth/register" class="btn btn-primary w-100">Add User</a>
+                        <a href="/auth/users" class="btn btn-primary">User lists</a>
+                        <a href="/auth/register" class="btn btn-primary">Add User</a>
                     </div>
                 </div>
             </div>
@@ -90,7 +91,10 @@
         </div>
     </div>
 
+    <!--Flash Message Section-->
+    <%-include('../partials/flash_message')%>
+
 </div>
-    <script src="/dashboard.js"></script>
+    <script src="/main.js"></script>
 </body>
 </html>

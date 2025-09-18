@@ -30,7 +30,10 @@ function addUser(username, first_name, last_name, email, hash, isAdmin = false){
             '(?, ?, ?, ?, ?, ?)',
             [username, first_name, last_name, isAdmin, email, hash],
             (err)=>{
-            if(err) reject(err);
+            if(err){
+                if(err.message.includes('UNIQUE')) reject(new Error('User already exists'));
+                else reject(err);
+            }
             resolve(null);
         });
     })
@@ -40,6 +43,16 @@ function getUser(username){
     return new Promise((resolve, reject)=>{
         // console.log('Getting user');
         db.get(`SELECT * FROM users WHERE username = ?`, [username], (err, result)=>{
+            if(err) reject(err);
+            resolve(result);
+        })
+    })
+}
+
+function getAllUsers() {
+    return new Promise((resolve, reject)=>{
+        // console.log('Getting user');
+        db.all(`SELECT * FROM users`, [], (err, result)=>{
             if(err) reject(err);
             resolve(result);
         })
@@ -65,5 +78,14 @@ function updateUser(old_username, new_username, first_name, last_name, email) {
     })
 }
 
+function deleteUser(username){
+    return new Promise((resolve, reject)=>{
+        db.run(`DELETE FROM users WHERE username = ?`, [username], (err, )=>{
+            if(err) reject(err);
+            resolve(null);
+        })
+    })
+}
 
-module.exports = {addUser, getUser, updateUser, getUserByEmail}
+
+module.exports = {addUser, getUser, getAllUsers, updateUser, deleteUser, getUserByEmail}

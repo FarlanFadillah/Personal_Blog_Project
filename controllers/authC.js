@@ -88,6 +88,19 @@ const register = asyncHandler( async (req, res, next) => {
     res.status(200).redirect('/admin');
 });
 
+const renderUserListPage = asyncHandler(async (req, res) => {
+    res.locals.users = await authM.getAllUsers();
+    res.status(200).render('pages/user_lists');
+})
+
+const deleteUserByUsername = asyncHandler(async (req, res) => {
+    const {username} = req.params;
+    console.log(username);
+    await authM.deleteUser(username);
+    addMessage(req, 'success', 'User deleted successfully.');
+    res.status(200).redirect('/auth/users');
+})
+
 
 
 module.exports = {
@@ -97,5 +110,7 @@ module.exports = {
     renderAccountSettingPage,
     updateUser,
     renderRegisterForm,
-    register
+    register,
+    renderUserListPage,
+    deleteUserByUsername,
 }

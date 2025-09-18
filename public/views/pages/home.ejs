@@ -12,13 +12,9 @@
         </div>
     </header>
 
-    <%if(messages){%>
-        <%for(msg of messages){%>
-            <div class="alert alert-danger" role="alert">
-                <%=msg.text%>
-            </div>
-        <%}%>
-    <%}%>
+    <!--Flash Message Section-->
+    <%-include('../partials/flash_message')%>
+
     <!-- Page content-->
     <div class="container">
         <div class="row">

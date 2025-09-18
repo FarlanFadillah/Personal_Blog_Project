@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <%-include('../partials/header')%>
+</head>
+<body>
+<!-- Articles List -->
+<div class="card shadow" id="articles">
+    <div class="card-body">
+        <h5 class="card-title mb-3">User Lists</h5>
+        <div class="table-responsive">
+            <table class="table table-striped align-middle">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <%if(users.length === 0){%>
+                    <div class="alert alert-danger" role="alert">
+                        No user.
+                    </div>
+                <%}%>
+                <%for(let [i, value] of users.entries()){%>
+                    <!-- Example row -->
+                    <tr>
+                        <th scope="row"><%=i+=1%></th>
+                        <td><%=value.username%></td>
+                        <td><%=value.email%></td>
+                        <td>
+    <!--                        <a href="/article/edit/<%=value.id%>" class="btn btn-sm btn-warning">Edit</a>-->
+
+                            <button class="btn btn-sm btn-danger" onclick="deleteUser('<%=value.username%>')" id="delete_btn" type="submit">Delete</button>
+                            <form id="delete_form_<%=value.username%>" action="/auth/users/delete/<%=value.username%>" method="post"></form>
+                        </td>
+                    </tr>
+                <%}%>
+                <!-- Add more rows dynamically -->
+                </tbody>
+            </table>
+
+        </div>
+        <a href="/admin" class="btn btn-primary">Dashboard</a>
+
+        <!--Flash Message Section-->
+        <%-include('../partials/flash_message')%>
+    </div>
+</div>
+<script src="/main.js"></script>
+</body>
+</html>
