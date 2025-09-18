@@ -1,6 +1,8 @@
 const authM = require('../models/authM');
 const hasher = require('../utils/hashing');
 const asyncHandler = require('../utils/asyncHandler');
+const {addMessage} = require("../utils/flashMessage");
+const {matchedData} = require('express-validator')
 function renderLoginForm(req, res){
     // check if user is authenticated by accessing the session property 'isAuthenticated'
     if(req.session.isAuthenticated) return res.redirect('/home')
@@ -24,9 +26,9 @@ const login = asyncHandler(async (req, res, next) => {
     if(user === undefined) throw new Error(`User not found!`);
 
     // Take the password from input, encrypt it, and check if it matches the one saved for the user.
-    await hasher.auth(password, user.salt, user.hash);
+    await hasher.passValidate(password, user.hash);
 
-    //if username and password is match, then76 create the session and store some user data
+    //if username and password is match, then create the session and store some user data
     req.session.user = {
         username : user.username,
         isAdmin : user.isAdmin,
@@ -45,7 +47,7 @@ function logout(req, res) {
 }
 
 const updateUser = asyncHandler(async (req, res) => {
-    const {username, first_name, last_name, email} = req.body;
+    const {username, first_name, last_name, email} = matchedData(req);
 
     await authM.updateUser(req.session.user.username, username, first_name, last_name, email);
     req.session.user = {
@@ -73,27 +75,27 @@ const updateUser = asyncHandler(async (req, res) => {
 //     }
 // }
 //
-// function renderRegisterForm(req, res) {
-//     if(req.session.isAuthenticated) return res.redirect('/home');
-//     res.render('pages/register', {msg : null});
-// }
-//
-// async function register(req, res) {
-//     try {
-//         const {username, first_name, last_name, email, password} = req.body;
-//         const {salt, hash} = await hasher.hash(password);
-//         await authM.addUser(username, first_name, last_name, email, salt, hash);
-//         //flash message
-//         res.session.flash = "Register successfully";
-//         res.status(200).redirect('/auth/login');
-//     }catch(err){
-//         res.status(200).render('pages/register', {msg : err.message});
-//     }
-//
-// }
+function renderRegisterForm(req, res) {
+    res.render('pages/register', {messages : res.locals.messages});
+}
+
+
+const register = asyncHandler( async (req, res, next) => {
+    const {username, first_name, last_name, email} = matchedData(req);
+    const {password} = req.body;
+    const hash = await hasher.genHashBcrypt(password);
+    await authM.addUser(username, first_name, last_name, email, hash);
+    res.status(200).redirect('/admin');
+});
 
 
 
 module.exports = {
-    login, logout, renderLoginForm, renderAccountSettingPage, updateUser
+    login,
+    logout,
+    renderLoginForm,
+    renderAccountSettingPage,
+    updateUser,
+    renderRegisterForm,
+    register
 }

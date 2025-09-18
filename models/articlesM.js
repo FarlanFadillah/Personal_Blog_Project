@@ -64,6 +64,15 @@ function getArticleById(id) {
     })
 }
 
+function getArticleByAuthorName(authorName){
+    return new Promise((resolve, reject) => {
+        db.all(`SELECT * FROM articles WHERE username = ?`, [authorName], (err, rows)=>{
+            if(err) reject(err);
+            resolve(rows);
+        })
+    })
+}
+
 const validationColumn = ['id', 'title', 'filePath', 'createdAt', 'updatedAt', 'username'];
 function getArticleByIdWithSpecificColumn(id, columns) {
 
@@ -169,6 +178,7 @@ module.exports = {
     deleteArticleJson,
     editArticleJson,
     readJsonKeyValue,
-    getArticleByIdWithSpecificColumn
+    getArticleByIdWithSpecificColumn,
+    getArticleByAuthorName
 }
 

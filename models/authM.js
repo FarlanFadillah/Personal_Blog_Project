@@ -23,10 +23,13 @@ db.serialize(() => {
     })
 })
 
-function addUser(username, first_name, last_name, email, salt, hash, isAdmin = false){
+function addUser(username, first_name, last_name, email, hash, isAdmin = false){
     return new Promise((resolve, reject)=>{
         // console.log("Adding user");
-        db.run('INSERT INTO users (username, first_name, last_name, isAdmin, email, salt, hash) VALUES (?, ?, ?, ?, ?, ?, ?)', [username, first_name, last_name, isAdmin, email, salt, hash], (err)=>{
+        db.run('INSERT INTO users (username, first_name, last_name, isAdmin, email, hash) VALUES ' +
+            '(?, ?, ?, ?, ?, ?)',
+            [username, first_name, last_name, isAdmin, email, hash],
+            (err)=>{
             if(err) reject(err);
             resolve(null);
         });
@@ -54,9 +57,7 @@ function getUserByEmail(email){
 }
 
 function updateUser(old_username, new_username, first_name, last_name, email) {
-
     return new Promise((resolve, reject)=>{
-        
         db.run(`UPDATE users SET username = ?, first_name = ?, last_name = ?, email = ? WHERE username = ?`, [new_username, first_name, last_name, email, old_username], (err)=>{
             if(err) reject(err);
             resolve(null);

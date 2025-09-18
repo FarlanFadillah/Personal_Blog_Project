@@ -1,0 +1,5 @@
+{
+  "title": "Chaining order",
+  "content": "Chaining order\r\n---\r\nThe order in which you call methods on a validation chain usually matters.\r\nThey are almost always run in the order that they are specified, therefore you can tell what a validation chain will do just by reading its definition, from first chained method to last.\r\n\r\nTake the following snippet as an example:\r\n\r\n```js\r\n// Validate if search_query is not empty, then trim it\r\nquery('search_query').notEmpty().trim();\r\n```\r\n\r\n",
+  "status": "published"
+}

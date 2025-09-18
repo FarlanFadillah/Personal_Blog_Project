@@ -5,7 +5,7 @@
 
 <div class="container my-4">
     <!-- Dashboard Header -->
-    <h2 class="text-center mb-4">Dashboard</h2>
+    <h2 class="text-center mb-4"><%=user.username%> Dashboard</h2>
 
     <!-- Cards Row -->
     <div class="row justify-content-center g-4 mb-5">
@@ -26,10 +26,23 @@
                 <div class="card-body">
                     <h5 class="card-title">Settings</h5>
                     <p class="card-text">Manage your account and preferences.</p>
-                    <a href="/auth/settings" class="btn btn-outline-secondary w-100">Settings</a>
+                    <a href="/auth/settings" class="btn btn-primary w-100">Settings</a>
                 </div>
             </div>
         </div>
+
+        <!--Add User-->
+        <%if(user.isAdmin){%>
+            <div class="col-md-4">
+                <div class="card shadow text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">User Management</h5>
+                        <p class="card-text">Register a new user for writing articles.</p>
+                        <a href="/auth/register" class="btn btn-primary w-100">Add User</a>
+                    </div>
+                </div>
+            </div>
+        <%}%>
     </div>
 
     <!-- Articles List -->
@@ -48,6 +61,11 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <%if(articles.length === 0){%>
+                        <div class="alert alert-danger" role="alert">
+                            No article published yet.
+                        </div>
+                    <%}%>
                     <%for(let [i, value] of articles.entries()){%>
                     <!-- Example row -->
                         <tr>

@@ -8,12 +8,13 @@ router.get('/', (req, res)=>{
     res.redirect('/home');
 })
 router.get('/home', renderHomePage);
-router.get('/article/:id', idValidator, validatorErrorHandler, renderArticlePage);
+router.get('/view/article/:id', ...idValidator, validatorErrorHandler, renderArticlePage);
 
 
 router.use((err, req, res, next)=>{
     return res.redirect('/home');
 })
+
 
 
 module.exports = router;

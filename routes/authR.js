@@ -3,10 +3,12 @@ const {renderLoginForm,
     login,
     logout,
     renderAccountSettingPage,
-    updateUser} = require("../controllers/authC");
+    updateUser, renderRegisterForm, register
+} = require("../controllers/authC");
 
 const {loginValidator,
-    updateAccountProfileValidator} = require('../validators/authV');
+    accountProfileValidator,
+    passwordValidator} = require('../validators/authV');
 
 const {validatorErrorHandler} = require('../middlewares/validatorErr');
 const {authentication} = require('../middlewares/authentication');
@@ -20,19 +22,31 @@ router.get('/', (req, res) => {
 
 router.route('/login')
     .get(renderLoginForm)
-    .post(loginValidator, validatorErrorHandler, login);
+    .post(...loginValidator, validatorErrorHandler, login);
 
 router.route('/logout')
     .post(logout);
 
 router.route('/settings')
     .get(authentication, renderAccountSettingPage)
-    .post(updateAccountProfileValidator, validatorErrorHandler, updateUser);
+    .post(...accountProfileValidator, validatorErrorHandler, updateUser);
+
+router.route('/register')
+    .get(authentication, renderRegisterForm)
+    .post(...accountProfileValidator, ...passwordValidator, validatorErrorHandler, register);
+
+
+
+// ERROR HANDLER SECTION
 
 router.use((error, req, res, next) => {
     if(req.originalUrl === '/auth/login') {
         addMessage(req, 'error', error.message)
         return res.redirect('/auth/login');
+    }
+    else if(req.originalUrl === '/auth/register'){
+        addMessage(req, 'error', error.message);
+        return res.redirect('/auth/register');
     }
     next(error);
 });
@@ -44,10 +58,9 @@ router.use((error, req, res, next) =>{
     }
     next(error);
 })
-// Not used
-// router.route('/register')
-//     .get(authController.renderRegisterForm)
-//     .post(authController.checkUser, authController.register);
+
+
+    // .post(authController.checkUser, authController.register);
 
 
 

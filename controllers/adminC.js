@@ -4,8 +4,8 @@ const asyncHandler = require("../utils/asyncHandler");
 
 
 const renderDashboardPage = asyncHandler( async(req, res, next)=> {
-    req.session.errors = null;
-    res.locals.articles = await articleModel.getAllArticles();
+    res.locals.articles = await articleModel.getArticleByAuthorName(req.session.user.username);
+    res.locals.user = req.session.user;
     res.status(200).render('pages/dashboard');
 });
 

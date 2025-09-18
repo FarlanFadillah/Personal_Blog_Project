@@ -15,7 +15,7 @@ router.route('/new')
     .post(newArticle);
 
 router.route('/edit/:id')
-    .get(idValidator, renderEditArticlePage)
+    .get(...idValidator, renderEditArticlePage)
     .post(editArticle);
 
 router.route('/delete/:id')

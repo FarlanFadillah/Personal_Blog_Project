@@ -14,9 +14,9 @@
 
         <h2>Register Form</h2>
 
-        <% if(msg){ %>
-        <div class="warning"><p><%=msg%></p></div>
-        <% } %>
+        <%for(msg of messages) {%>
+            <div class="warning"><p><%=msg.text%></p></div>
+        <%}%>
 
         <div class="inputBox">
             <input type="text" name="username" required placeholder="" value="">
@@ -44,7 +44,7 @@
         </div>
         <div class="button">
             <input type="submit" value="Register">
-            <a href="login" class="login">Login</a>
+            <a href="/admin" class="login">Login</a>
         </div>
 
     </form>
