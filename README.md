@@ -91,7 +91,6 @@
 > * ✅ Improve security (CSRF protection, input sanitization)
 > * ✅ Create REST API endpoints for external clients
 >
-> https://roadmap.sh/projects/personal-blog
->
-> https://roadmap.sh/projects/personal-blog/solutions?u=645883b405999de060bceba9
+> ## Project URL
+> For more details this project is inspired from roadmap.sh: [Personal Blog](https://roadmap.sh/projects/personal-blog)
 
