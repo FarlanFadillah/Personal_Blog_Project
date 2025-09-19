@@ -17,7 +17,11 @@ const {loginValidator,
 
 const {validatorErrorHandler} = require('../middlewares/validatorErr');
 const {authentication, adminAuthentication} = require('../middlewares/authentication');
-const {addMessage} = require('../utils/flashMessage')
+const {addMessage} = require('../utils/flashMessage');
+
+// logger module
+const logger = require('../utils/logger');
+const loggerAuth = logger.child({module : 'authentication router'})
 
 
 // prevent user to access the root route
@@ -54,10 +58,11 @@ router.route('/settings/delete-account')
     .post(adminAuthentication, (req, res, next)=>{
         next(new Error('Unable to delete account right now.'));
     })
-// ERROR HANDLER SECTION
 
+// ERROR HANDLER SECTION
 router.use((error, req, res, next) => {
-    addMessage(req, 'error', error.message)
+    addMessage(req, 'error', error.message);
+    loggerAuth.error(error.message);
     if(req.originalUrl === '/auth/login') return res.redirect('/auth/login');
     else if(req.originalUrl === '/auth/register') return res.redirect('/auth/register');
     else if(req.originalUrl.includes('/auth/users/delete/')) return res.redirect('/auth/users');
@@ -68,6 +73,7 @@ router.use((error, req, res, next) => {
 
 
 router.use((error, req, res, next) =>{
+    loggerAuth.error(error.message);
     if(req.originalUrl === '/auth/settings') {
         return res.redirect('/auth/settings');
     }

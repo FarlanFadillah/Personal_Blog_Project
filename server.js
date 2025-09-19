@@ -4,6 +4,9 @@ const cors = require('cors');
 const process = require('process');
 const path = require('path');
 
+// util
+const logger = require('./utils/logger');
+
 // custom module
 // router modules
 const authRouter = require('./routes/authR');
@@ -32,6 +35,17 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(session);
 
+// logger middleware
+app.use((req, res, next)=>{
+    logger.info('Incoming Request :', {
+        method: req.method,
+        url : req.url,
+        ip : req.ip
+    })
+    next();
+});
+
+// flash message
 app.use((req, res, next)=>{
     res.locals.messages = req.session.messages || [];
     req.session.messages = [];
@@ -46,7 +60,7 @@ app.use('/', rootRouter);
 
 // handling the route that does not exist
 app.use((req, res)=>{
-    res.status(400).send('oops the route does not exist ');
+    res.redirect('/home');
 });
 
 

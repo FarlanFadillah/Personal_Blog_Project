@@ -25,7 +25,8 @@
     "express-validator": "^7.2.1",
     "marked": "^16.3.0",
     "morgan": "^1.10.1",
-    "pbkdf2-password": "^1.2.1"
+    "pbkdf2-password": "^1.2.1",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "connect-sqlite3": "^0.9.16",
