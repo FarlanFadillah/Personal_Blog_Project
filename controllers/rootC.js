@@ -25,8 +25,7 @@ const renderArticlePage = asyncHandler(async (req, res, next) => {
 
     const content = await articleModel.readJsonKeyValue(article.filePath, 'content');
     if(!content) return redirectToHome(req, res, 'content is deleted or not found');
-
-    res.render('pages/article_show', {article : article, content : marked.parse(content)});
+    res.render('pages/article_view', {article : article, content : marked.parse(content)});
 })
 
 function makePreviewContent(string, length){

@@ -2,7 +2,7 @@ const articleModel = require("../models/articlesM");
 const asyncHandler = require("../utils/asyncHandler");
 
 function renderNewArticlePage(req, res) {
-    res.status(200).render('pages/article', {
+    res.status(200).render('pages/article_form', {
             title : 'New Article',
             route : '/article/new',
             article_title : null,
@@ -20,7 +20,7 @@ const renderEditArticlePage = asyncHandler(async (req, res, next) => {
 
     if(!content) return redirectToDashboard(res);
 
-    res.status(200).render('pages/article', {
+    res.status(200).render('pages/article_form', {
         title : 'Edit Article',
         route : '/article/edit/' + id,
         article_title : article.title,

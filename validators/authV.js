@@ -42,6 +42,14 @@ const passwordValidator = [
                 throw new Error('Password confirmation does not match password');
             }
             return true;
+        }),
+    validator.body('old_password')
+        .optional({checkFalsy : true})
+        .custom((value, {req}) =>{
+            if(req.body.password && value === req.body.password){
+                throw new Error('Your new password should not be the same as your old one');
+            }
+            return true;
         })
 ]
 

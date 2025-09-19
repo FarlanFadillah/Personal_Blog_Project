@@ -95,10 +95,23 @@ const renderUserListPage = asyncHandler(async (req, res) => {
 
 const deleteUserByUsername = asyncHandler(async (req, res) => {
     const {username} = req.params;
-    console.log(username);
     await authM.deleteUser(username);
     addMessage(req, 'success', 'User deleted successfully.');
     res.status(200).redirect('/auth/users');
+});
+
+
+const updateUserPassword = asyncHandler(async (req, res) => {
+    const {username} = req.session.user;
+    const {old_password, password} = req.body;
+
+    const user = await authM.getUser(username);
+
+    await hasher.passValidate(old_password, user.hash);
+
+    await authM.updateOneColumn(username, 'hash', await hasher.genHashBcrypt(password));
+    addMessage(req, 'success', 'Password updated successfully.');
+    res.status(200).redirect('/admin');
 })
 
 
@@ -109,6 +122,7 @@ module.exports = {
     renderLoginForm,
     renderAccountSettingPage,
     updateUser,
+    updateUserPassword,
     renderRegisterForm,
     register,
     renderUserListPage,

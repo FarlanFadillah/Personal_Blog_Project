@@ -38,7 +38,7 @@
                     <div class="card-body">
                         <h5 class="card-title">User Management</h5>
                         <p class="card-text">Register a new user for writing articles.</p>
-                        <a href="/auth/users" class="btn btn-primary">User lists</a>
+                        <a href="/auth/users" class="btn btn-primary">User Lists</a>
                         <a href="/auth/register" class="btn btn-primary">Add User</a>
                     </div>
                 </div>
@@ -75,9 +75,8 @@
                             <td><%=value.createdAt%></td>
                             <td>
                                 <a href="/article/edit/<%=value.id%>" class="btn btn-sm btn-warning">Edit</a>
-
-                                <button class="btn btn-sm btn-danger" onclick="deleteArticle(<%=value.id%>)" id="delete_btn" type="submit">Delete</button>
-                                <form id="delete_form_<%=value.id%>" action="/article/delete/<%=value.id%>" method="post"></form>
+                                <button class="btn btn-sm btn-danger" form="delete_form_<%=value.id%>"  id="delete_btn" type="submit">Delete</button>
+                                <form id="delete_form_<%=value.id%>" onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone');" action="/article/delete/<%=value.id%>" method="post"></form>
                             </td>
                         </tr>
                     <%}%>

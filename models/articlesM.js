@@ -2,6 +2,9 @@ const sqlite3 = require('sqlite3');
 const {readFile, writeFile, unlink} = require('fs');
 const db = new sqlite3.Database('./db/main.sqlite3', (err) => {
     if(err) console.log(err.message);
+    db.run("PRAGMA foreign_keys = ON", (err)=>{
+        if(err) console.log(err.message);
+    });
     console.log('Articles Database Connected');
 })
 
@@ -48,7 +51,7 @@ db.serialize(() => {
 
 function getAllArticles() {
     return new Promise((resolve, reject) => {
-        db.all('SELECT id, title, createdAt, filePath FROM articles', [], (err, rows) => {
+        db.all('SELECT id, title, createdAt, filePath, username FROM articles', [], (err, rows) => {
             if(err) reject(err);
             resolve(rows);
         })

@@ -3,12 +3,16 @@ const {renderLoginForm,
     login,
     logout,
     renderAccountSettingPage,
-    updateUser, renderRegisterForm, register, renderUserListPage, deleteUserByUsername
+    updateUser, renderRegisterForm,
+    register,
+    renderUserListPage,
+    deleteUserByUsername,
+    updateUserPassword
 } = require("../controllers/authC");
 
 const {loginValidator,
     accountProfileValidator,
-    passwordValidator, usernameValidator
+    passwordValidator
 } = require('../validators/authV');
 
 const {validatorErrorHandler} = require('../middlewares/validatorErr');
@@ -32,6 +36,9 @@ router.route('/settings')
     .get(authentication, renderAccountSettingPage)
     .post(...accountProfileValidator, validatorErrorHandler, updateUser);
 
+router.route('/settings/change-password')
+    .post(authentication, ...passwordValidator, validatorErrorHandler, updateUserPassword);
+
 router.route('/register')
     .get(adminAuthentication, renderRegisterForm)
     .post(...accountProfileValidator, ...passwordValidator, validatorErrorHandler, register);
@@ -42,17 +49,20 @@ router.route('/users')
 router.route('/users/delete/:username')
     .post(adminAuthentication, deleteUserByUsername);
 
+
+router.route('/settings/delete-account')
+    .post(adminAuthentication, (req, res, next)=>{
+        next(new Error('Unable to delete account right now.'));
+    })
 // ERROR HANDLER SECTION
 
 router.use((error, req, res, next) => {
-    if(req.originalUrl === '/auth/login') {
-        addMessage(req, 'error', error.message)
-        return res.redirect('/auth/login');
-    }
-    else if(req.originalUrl === '/auth/register'){
-        addMessage(req, 'error', error.message);
-        return res.redirect('/auth/register');
-    }
+    addMessage(req, 'error', error.message)
+    if(req.originalUrl === '/auth/login') return res.redirect('/auth/login');
+    else if(req.originalUrl === '/auth/register') return res.redirect('/auth/register');
+    else if(req.originalUrl.includes('/auth/users/delete/')) return res.redirect('/auth/users');
+    else if(req.originalUrl.includes('/auth/settings/')) return res.redirect('/auth/settings');
+    else if(req.originalUrl.includes('delete-account')) return res.redirect('/auth/settings');
     next(error);
 });
 

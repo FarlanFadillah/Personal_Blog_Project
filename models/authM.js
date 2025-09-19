@@ -1,5 +1,4 @@
 const sqlite3 = require('sqlite3');
-const asyncHandler = require("../utils/asyncHandler");
 
 const db = new sqlite3.Database('./db/main.sqlite3', (err) => {
     if(err) console.log(err.message);
@@ -78,14 +77,28 @@ function updateUser(old_username, new_username, first_name, last_name, email) {
     })
 }
 
-function deleteUser(username){
-    return new Promise((resolve, reject)=>{
-        db.run(`DELETE FROM users WHERE username = ?`, [username], (err, )=>{
+function updateOneColumn(username, column, value){
+    return new Promise((resolve, reject) =>{
+        db.run(`UPDATE users SET ${column} = ? WHERE username = ?`,
+            [value, username],
+            (err)=>{
             if(err) reject(err);
             resolve(null);
         })
     })
 }
 
+function deleteUser(username){
+    return new Promise((resolve, reject)=>{
+        db.run(`DELETE FROM users WHERE username = ?`, [username], (err, )=>{
+            if(err) {
+                if(err.message.includes('SQLITE_CONSTRAINT')) reject(new Error("Can't Delete this user"));
+                reject(err);
+            }
+            resolve(null);
+        })
+    })
+}
 
-module.exports = {addUser, getUser, getAllUsers, updateUser, deleteUser, getUserByEmail}
+
+module.exports = {addUser, getUser, getAllUsers, updateUser, updateOneColumn, deleteUser, getUserByEmail}
