@@ -2,15 +2,17 @@ const authM = require('../models/authM');
 const hasher = require('../utils/hashing');
 const asyncHandler = require('../utils/asyncHandler');
 const {addMessage} = require("../utils/flashMessage");
-const {matchedData} = require('express-validator')
+const {matchedData} = require('express-validator');
+
+const logger = require('../utils/logger');
+const authLogger = logger.child({module : 'Auth Ctrl'});
+
 function renderLoginForm(req, res){
     // check if user is authenticated by accessing the session property 'isAuthenticated'
-    if(req.session.isAuthenticated) return res.redirect('/home')
+    if(req.session.isAuthenticated) return res.redirect('/home');
     res.status(200).render('pages/login');
 }
 
-const logger = require('../utils/logger');
-const authLogger = logger.child({module : 'Auth Ctrl'})
 
 function renderAccountSettingPage (req, res, next) {
     res.status(200).render('pages/settings', {user: req.session.user});
@@ -40,10 +42,17 @@ const login = asyncHandler(async (req, res, next) => {
         last_name : user.last_name
     }
     req.session.isAuthenticated = true;
+
+    // log
+    authLogger.info('User logged in', {username : user.username, isAdmin : user.isAdmin});
+
     res.status(200).redirect('/admin');
 });
 
 function logout(req, res) {
+    //log
+    authLogger.info('User logged out', {username : req.session.user.username});
+
     // destroy the session, and redirect the route to login
     req.session.destroy();
     res.redirect('/auth/login');
@@ -61,6 +70,10 @@ const updateUser = asyncHandler(async (req, res) => {
         last_name : last_name
     }
     req.session.isAuthenticated = true;
+
+    // log
+    authLogger.info('User profile updated', {username : req.session.user.username});
+
     res.status(200).redirect('/admin');
 })
 
@@ -88,6 +101,10 @@ const register = asyncHandler( async (req, res, next) => {
     const {password} = req.body;
     const hash = await hasher.genHashBcrypt(password);
     await authM.addUser(username, first_name, last_name, email, hash);
+
+    // log
+    authLogger.info('New User registered', {username : req.session.user.username});
+
     res.status(200).redirect('/admin');
 });
 
@@ -100,6 +117,9 @@ const deleteUserByUsername = asyncHandler(async (req, res) => {
     const {username} = req.params;
     await authM.deleteUser(username);
     addMessage(req, 'success', 'User deleted successfully.');
+
+    // log
+    authLogger.info('User deleted successfully.', {username : username});
 
     res.status(200).redirect('/auth/users');
 });
@@ -115,6 +135,10 @@ const updateUserPassword = asyncHandler(async (req, res) => {
 
     await authM.updateOneColumn(username, 'hash', await hasher.genHashBcrypt(password));
     addMessage(req, 'success', 'Password updated successfully.');
+
+    // log
+    authLogger.info('Password updated successfully.', {username : req.session.user.username});
+
     res.status(200).redirect('/admin');
 })
 
