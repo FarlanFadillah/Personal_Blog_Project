@@ -17,6 +17,12 @@ const logger = createLogger({
     transports : [
         new transports.File({filename : './logs/app.log'}),
         new transports.File({filename : './logs/err.log', level : 'warn'}),
+    ],
+    exceptionHandlers : [
+        new transports.File({filename : './logs/exception.log'}),
+    ],
+    rejectionHandlers : [
+        new transports.File({filename : './logs/rejection.log'}),
     ]
 });
 

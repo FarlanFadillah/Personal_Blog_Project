@@ -1,7 +1,10 @@
 const articleModel = require("../models/articlesM");
 const asyncHandler = require('../utils/asyncHandler');
-const marked = require("marked");
 const {addMessage} = require('../utils/flashMessage');
+const logger = require('../utils/logger');
+const rootCtrlLogger = logger.child({module : 'RootCtrl'});
+const {makePreviewContent, makeDateString} = require('../utils/string_tools');
+const marked = require('marked');
 
 const renderHomePage = asyncHandler(async (req, res, next) => {
     const articles = await articleModel.getAllArticles();
@@ -18,7 +21,7 @@ const renderArticlePage = asyncHandler(async (req, res, next) => {
 
     const article = await articleModel.getArticleByIdWithSpecificColumn(id,
         ['id', 'title', 'createdAt', 'updatedAt', 'username', 'filePath']);
-    if(!article) return redirectToHome(req, res, 'content not found')
+    if(!article) return redirectToHome(req, res, 'Article not found', {article_id : id})
 
     article.createdAt = makeDateString(article.createdAt);
     article.updatedAt = makeDateString(article.updatedAt);
@@ -28,17 +31,9 @@ const renderArticlePage = asyncHandler(async (req, res, next) => {
     res.render('pages/article_view', {article : article, content : marked.parse(content)});
 })
 
-function makePreviewContent(string, length){
-    const lastWord = string.lastIndexOf(' ', length);
-    return marked.parse(string.slice(0, lastWord) + "...");
-}
-
-function makeDateString(date){
-    return new Date(date).toDateString() +" "+ new Date(date).toLocaleTimeString();
-}
-
-function redirectToHome(req, res, msg = null){
+function redirectToHome(req, res, msg = null, addition = {}){
     addMessage(req, 'error', msg);
+    rootCtrlLogger.error(msg, addition);
     return res.redirect('/home');
 }
 

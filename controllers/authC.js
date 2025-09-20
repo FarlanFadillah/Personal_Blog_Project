@@ -9,6 +9,9 @@ function renderLoginForm(req, res){
     res.status(200).render('pages/login');
 }
 
+const logger = require('../utils/logger');
+const authLogger = logger.child({module : 'Auth Ctrl'})
+
 function renderAccountSettingPage (req, res, next) {
     res.status(200).render('pages/settings', {user: req.session.user});
 }
@@ -97,6 +100,7 @@ const deleteUserByUsername = asyncHandler(async (req, res) => {
     const {username} = req.params;
     await authM.deleteUser(username);
     addMessage(req, 'success', 'User deleted successfully.');
+
     res.status(200).redirect('/auth/users');
 });
 
