@@ -26,5 +26,17 @@ const logger = createLogger({
     ]
 });
 
+function log(req, type, message, addition = {}){
+    logger.log(type, message, {addition,
+        method: req.method,
+        url : req.url,
+        ip : req.ip,
+        reqId : req.id,
+        user : req.session.user?.username ?? 'guest'
+    })
+}
 
-module.exports = logger;
+module.exports = {
+    logger,
+    log
+};

@@ -8,6 +8,8 @@ const {renderNewArticlePage,
 
 const {idValidator} = require('../validators/articleV');
 
+const {articleErrorHandler} = require('../middlewares/errorsHandler')
+
 router.use(authentication);
 
 router.route('/new')
@@ -20,6 +22,9 @@ router.route('/edit/:id')
 
 router.route('/delete/:id')
     .post(deleteArticle);
+
+// errors handler
+router.use(articleErrorHandler);
 
 
 

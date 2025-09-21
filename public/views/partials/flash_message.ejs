@@ -1,3 +1,9 @@
 <%for(msg of messages){%>
-    <div class="alert alert-danger" role="alert"><%=msg.text%></div>
+    <%if(msg.type === 'info'){%>
+        <div class="alert alert-success" role="alert"><%=msg.text%></div>
+    <%} else if (msg.type === 'warning'){%>
+        <div class="alert alert-warning" role="alert"><%=msg.text%></div>
+    <%} else if (msg.type === 'error'){%>
+        <div class="alert alert-danger" role="alert"><%=msg.text%></div>
+    <%}%>
 <%}%>

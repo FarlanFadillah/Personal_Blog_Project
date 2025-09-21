@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const {CustomError} = require('../utils/errors');
 
 async function genHashBcrypt(password) {
     const salt = await bcrypt.genSalt(12);
@@ -13,7 +14,7 @@ async function passValidate(pass, hash){
     return new Promise((resolve, reject)=>{
         bcrypt.compare(pass, hash, (err, result)=>{
             if(err) reject(err);
-            result ? resolve(null) : reject(new Error('Password mismatch'));
+            result ? resolve(null) : reject(new CustomError('Password mismatch', 'warning'));
         })
     })
 }

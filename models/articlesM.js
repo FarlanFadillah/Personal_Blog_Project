@@ -1,5 +1,6 @@
 const sqlite3 = require('sqlite3');
 const {readFile, writeFile, unlink} = require('fs');
+const {CustomError} = require('../utils/errors')
 const db = new sqlite3.Database('./db/main.sqlite3', (err) => {
     if(err) console.log(err.message);
     db.run("PRAGMA foreign_keys = ON", (err)=>{
@@ -52,7 +53,7 @@ db.serialize(() => {
 function getAllArticles() {
     return new Promise((resolve, reject) => {
         db.all('SELECT id, title, createdAt, filePath, username FROM articles', [], (err, rows) => {
-            if(err) reject(err);
+            if(err) reject(new CustomError(err.message, 'error'));
             resolve(rows);
         })
     })
@@ -61,7 +62,7 @@ function getAllArticles() {
 function getArticleById(id) {
     return new Promise((resolve, reject) => {
         db.get(`SELECT * FROM articles WHERE id = ?`,[id], (err, row) => {
-            if(err) reject(err);
+            if(err) reject(new CustomError(err.message, 'error'));
             resolve(row);
         })
     })
@@ -70,7 +71,7 @@ function getArticleById(id) {
 function getArticleByAuthorName(authorName){
     return new Promise((resolve, reject) => {
         db.all(`SELECT * FROM articles WHERE username = ?`, [authorName], (err, rows)=>{
-            if(err) reject(err);
+            if(err) reject(new CustomError(err.message, 'error'));
             resolve(rows);
         })
     })
@@ -80,29 +81,25 @@ const validationColumn = ['id', 'title', 'filePath', 'createdAt', 'updatedAt', '
 function getArticleByIdWithSpecificColumn(id, columns) {
 
     const filteredColumns = columns.filter(col => validationColumn.includes(col));
-    if(!filteredColumns.length) throw new Error('No valid columns requested');
+    if(!filteredColumns.length) throw new CustomError('No valid columns requested', 'warning');
 
 
     return new Promise((resolve, reject) => {
         db.get(`SELECT ${filteredColumns.join(',')} FROM articles WHERE id = ?`,[id], (err, row) => {
-            if(err) reject(err);
+            if(err) reject(new CustomError(err.message, 'error'));
             resolve(row);
         })
     })
 }
-async function createArticle(title, path, username) {
-    try{
-        return new Promise((resolve, reject) => {
-            db.run(`INSERT INTO articles (title, filePath, createdAt, updatedAt, username) VALUES (?,?,datetime('now', 'localtime'),datetime('now', 'localtime'),?)`,
-                [title, path, username],
-                function (err) {
-                    if(err) reject(err);
-                    resolve(this.lastID);
-                })
-        })
-    }catch(err){
-        throw err;
-    }
+function createArticle(title, path, username) {
+    return new Promise((resolve, reject) => {
+        db.run(`INSERT INTO articles (title, filePath, createdAt, updatedAt, username) VALUES (?,?,datetime('now', 'localtime'),datetime('now', 'localtime'),?)`,
+            [title, path, username],
+            function (err) {
+                if(err) reject(new CustomError(err.message, 'error'));
+                resolve(this.lastID);
+            })
+    });
 }
 
 function writeArticleToJson(path, title, content) {
@@ -114,7 +111,7 @@ function writeArticleToJson(path, title, content) {
         }
         const jsonString = JSON.stringify(article, null, 2);
         writeFile(path, jsonString, (err) => {
-            if(err) reject(err);
+            if(err) reject(new CustomError(err.message, 'error'));
             resolve(null);
         })
     })
@@ -124,7 +121,7 @@ function writeArticleToJson(path, title, content) {
 function readJson(path){
     return new Promise((resolve, reject)=>{
         readFile(path, 'utf-8', (err, data)=>{
-            if(err) reject(err);
+            if(err) reject(new CustomError(err.message, 'error'));
             resolve(JSON.parse(data.toString()));
         })
     })
@@ -133,16 +130,16 @@ function readJson(path){
 function readJsonKeyValue(path, key){
     return new Promise((resolve, reject)=>{
         readFile(path, 'utf-8', (err, data)=>{
-            if(err) reject(err);
+            if(err) reject(new CustomError(err.message, 'error'));
             resolve(JSON.parse(data.toString())[key]);
         })
     })
 }
 
-async function deleteArticleDbs(id) {
+function deleteArticleDbs(id) {
     return new Promise((resolve, reject) => {
         db.run(`DELETE FROM articles WHERE id = ?`,[id], (err) => {
-            if(err) reject(err);
+            if(err) reject(new CustomError(err.message, 'error'));
             resolve(null);
         })
     })
@@ -151,24 +148,20 @@ async function deleteArticleDbs(id) {
 function deleteArticleJson(path) {
     return new Promise((resolve, reject) => {
         unlink(path, (err)=>{
-            if(err) reject(err);
+            if(err) reject(new CustomError(err.message, 'error'));
             resolve(null);
         })
     })
 }
 
 async function editArticleJson(path, title, content, id) {
-    try{
-        await writeArticleToJson(path, title, content);
-        return new Promise((resolve, reject) => {
-            db.run(`UPDATE articles SET title = ?, updatedAt = datetime('now', 'localtime') where id = ?`, [title, id], (err) => {
-                if(err) reject(err);
-                resolve(null);
-            })
+    await writeArticleToJson(path, title, content);
+    return new Promise((resolve, reject) => {
+        db.run(`UPDATE articles SET title = ?, updatedAt = datetime('now', 'localtime') where id = ?`, [title, id], (err) => {
+            if(err) reject(new CustomError(err.message, 'error'));
+            resolve(null);
         })
-    }catch (err){
-        throw err;
-    }
+    })
 }
 
 module.exports = {

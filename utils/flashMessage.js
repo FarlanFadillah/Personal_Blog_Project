@@ -1,4 +1,4 @@
-function addMessage(req, type, text){
+function addMessage(req, type = 'error', text){
     if(!Array.isArray(req.session.messages)){
         req.session.messages = [];
     }

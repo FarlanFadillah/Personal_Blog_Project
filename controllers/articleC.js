@@ -1,6 +1,8 @@
 const articleModel = require("../models/articlesM");
 const asyncHandler = require("../utils/asyncHandler");
-const {redirectToDashboard} = require("../utils/redirects");
+const {log} = require("../utils/logger");
+const {addMessage} = require("../utils/flashMessage");
+const {CustomError} = require('../utils/errors')
 
 const renderNewArticlePage = asyncHandler(async (req, res, next) => {
     res.status(200).render('pages/article_form', {
@@ -12,13 +14,13 @@ const renderNewArticlePage = asyncHandler(async (req, res, next) => {
 
 const renderEditArticlePage = asyncHandler(async (req, res, next) => {
     const {id} = req.params;
-    if(id === undefined) return redirectToDashboard(res, 'Aricle Controller', 'Id is not defined');
+    if(id === undefined) return next(new Error('Id is not defined'));
     
     const article = await articleModel.getArticleById(id);
-    if(!article) return redirectToDashboard(res, 'Aricle Controller', 'Article not found');
+    if(!article) return next(new CustomError('Article not found', 'error'));
 
     const content = await articleModel.readJson(article.filePath);
-    if(!content) return redirectToDashboard(res, 'Article Controller', 'Content not found');
+    if(!content) return next(new CustomError('Content not found', 'error'));
 
     res.status(200).render('pages/article_form', {
         title : 'Edit Article',
@@ -34,7 +36,14 @@ const newArticle = asyncHandler(async (req, res, next) => {
 
     await articleModel.writeArticleToJson(path, title, content);
     await articleModel.createArticle(title, path, username);
-    redirectToDashboard(res, 'Article Controller', 'New Article created successfully');
+
+    // flash message
+    addMessage(req, 'info', 'Article created');
+
+    // log
+    log(req, 'info', 'Article created', {module : 'Article Ctrl'});
+
+    res.redirect('/admin');
 });
 
 const editArticle = asyncHandler(async(req, res, next) => {
@@ -43,7 +52,14 @@ const editArticle = asyncHandler(async(req, res, next) => {
     const {filePath} = await articleModel.getArticleById(id);
 
     await articleModel.editArticleJson(filePath, title, content, id);
-    redirectToDashboard(res, 'Article Controller', 'Article edit successfully');
+
+    // flash message
+    addMessage(req, 'info', 'Article edited');
+
+    // log
+    log(req, 'info', 'Article edited', {module : 'Article Ctrl'});
+
+    res.redirect('/admin');
 });
 
 const deleteArticle = asyncHandler(async (req, res, next) => {
@@ -52,7 +68,14 @@ const deleteArticle = asyncHandler(async (req, res, next) => {
 
     await articleModel.deleteArticleJson(filePath);
     await articleModel.deleteArticleDbs(id);
-    redirectToDashboard(res, 'Article Controller', 'Article deleted successfully');
+
+    // flash message
+    addMessage(req, 'info', 'Article deleted');
+
+    // log
+    log(req, 'info', 'Article deleted', {module : 'Article Ctrl'});
+
+    res.redirect('/admin');
 });
 
 

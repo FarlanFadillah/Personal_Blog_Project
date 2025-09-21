@@ -2,6 +2,7 @@ const {renderHomePage, renderArticlePage} = require("../controllers/rootC");
 const router = require('express').Router();
 const {idValidator} = require('../validators/articleV');
 const {validatorErrorHandler} = require('../middlewares/validatorErr');
+const {rootErrorHandler} = require('../middlewares/errorsHandler');
 
 
 router.get('/', (req, res)=>{
@@ -10,10 +11,8 @@ router.get('/', (req, res)=>{
 router.get('/home', renderHomePage);
 router.get('/view/article/:id', ...idValidator, validatorErrorHandler, renderArticlePage);
 
-
-router.use((err, req, res, next)=>{
-    return res.redirect('/home');
-})
+// errors handler
+router.use(rootErrorHandler);
 
 
 

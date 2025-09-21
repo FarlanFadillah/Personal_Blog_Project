@@ -4,19 +4,28 @@ const asyncHandler = require('../utils/asyncHandler');
 const {addMessage} = require("../utils/flashMessage");
 const {matchedData} = require('express-validator');
 
-const logger = require('../utils/logger');
-const authLogger = logger.child({module : 'Auth Ctrl'});
+const {log} = require('../utils/logger');
+const {CustomError} = require("../utils/errors");
 
-function renderLoginForm(req, res){
+
+const renderLoginForm = asyncHandler(async (req, res, next)=>{
     // check if user is authenticated by accessing the session property 'isAuthenticated'
     if(req.session.isAuthenticated) return res.redirect('/home');
     res.status(200).render('pages/login');
-}
+});
 
+const renderRegisterForm = asyncHandler(async (req, res, next) =>{
+    res.render('pages/register', {messages : res.locals.messages});
+});
 
-function renderAccountSettingPage (req, res, next) {
+const renderUserListPage = asyncHandler(async (req, res, next) => {
+    res.locals.users = await authM.getAllUsers();
+    res.status(200).render('pages/user_lists');
+})
+
+const renderAccountSettingPage = asyncHandler(async (req, res, next) => {
     res.status(200).render('pages/settings', {user: req.session.user});
-}
+});
 
 const login = asyncHandler(async (req, res, next) => {
     const {username, password} = req.body;
@@ -28,7 +37,7 @@ const login = asyncHandler(async (req, res, next) => {
     else user = await authM.getUser(username);
 
     // check if user is existing
-    if(user === undefined) throw new Error(`User not found!`);
+    if(user === undefined) next(new CustomError(`User not found!`, 'warning'));
 
     // Take the password from input, encrypt it, and check if it matches the one saved for the user.
     await hasher.passValidate(password, user.hash);
@@ -44,21 +53,23 @@ const login = asyncHandler(async (req, res, next) => {
     req.session.isAuthenticated = true;
 
     // log
-    authLogger.info('User logged in', {username : user.username, isAdmin : user.isAdmin});
+    log(req, 'info', 'User logged in',
+        {username : user.username, isAdmin : user.isAdmin, module : 'Auth Ctrl' });
 
     res.status(200).redirect('/admin');
 });
 
-function logout(req, res) {
+const logout = asyncHandler( async (req, res, next) => {
     //log
-    authLogger.info('User logged out', {username : req.session.user.username});
+    log(req, 'info', 'User logged out',
+        {username : req.session.user.username, module : 'Auth Ctrl'});
 
     // destroy the session, and redirect the route to login
     req.session.destroy();
     res.redirect('/auth/login');
-}
+});
 
-const updateUser = asyncHandler(async (req, res) => {
+const updateUser = asyncHandler(async (req, res, next) => {
     const {username, first_name, last_name, email} = matchedData(req);
 
     await authM.updateUser(req.session.user.username, username, first_name, last_name, email);
@@ -72,29 +83,10 @@ const updateUser = asyncHandler(async (req, res) => {
     req.session.isAuthenticated = true;
 
     // log
-    authLogger.info('User profile updated', {username : req.session.user.username});
-
+    log(req, 'info', 'User profile updated',
+        {username : req.session.user.username, module : 'Auth Ctrl'});
     res.status(200).redirect('/admin');
-})
-
-
-
-// Register system (not used)
-// async function checkUser(req, res, next) {
-//     const {username} = req.body;
-//     try {
-//         const data = await authM.getUser(username);
-//         if(data === undefined) return next();
-//         res.status(200).render('pages/register', {msg : "username already exists"});
-//     } catch (error) {
-//         next(error);
-//     }
-// }
-//
-function renderRegisterForm(req, res) {
-    res.render('pages/register', {messages : res.locals.messages});
-}
-
+});
 
 const register = asyncHandler( async (req, res, next) => {
     const {username, first_name, last_name, email} = matchedData(req);
@@ -103,15 +95,11 @@ const register = asyncHandler( async (req, res, next) => {
     await authM.addUser(username, first_name, last_name, email, hash);
 
     // log
-    authLogger.info('New User registered', {username : req.session.user.username});
+    log(req, 'info', 'New User registered',
+        {user_registered : username, module : 'Auth Ctrl'});
 
     res.status(200).redirect('/admin');
 });
-
-const renderUserListPage = asyncHandler(async (req, res) => {
-    res.locals.users = await authM.getAllUsers();
-    res.status(200).render('pages/user_lists');
-})
 
 const deleteUserByUsername = asyncHandler(async (req, res) => {
     const {username} = req.params;
@@ -119,17 +107,19 @@ const deleteUserByUsername = asyncHandler(async (req, res) => {
     addMessage(req, 'success', 'User deleted successfully.');
 
     // log
-    authLogger.info('User deleted successfully.', {username : username});
+    log(req, 'info', 'User deleted successfully',
+        {user_deleted : username, module : 'Auth Ctrl'});
 
     res.status(200).redirect('/auth/users');
 });
 
 
-const updateUserPassword = asyncHandler(async (req, res) => {
+const updateUserPassword = asyncHandler(async (req, res, next) => {
     const {username} = req.session.user;
     const {old_password, password} = req.body;
 
     const user = await authM.getUser(username);
+    if(user === undefined) return next(new CustomError(`User not found!`, 'warning'));
 
     await hasher.passValidate(old_password, user.hash);
 
@@ -137,12 +127,11 @@ const updateUserPassword = asyncHandler(async (req, res) => {
     addMessage(req, 'success', 'Password updated successfully.');
 
     // log
-    authLogger.info('Password updated successfully.', {username : req.session.user.username});
+    log(req, 'info', 'Password updated successfully',
+        {username : username, module : 'Auth Ctrl'});
 
     res.status(200).redirect('/admin');
-})
-
-
+});
 
 module.exports = {
     login,

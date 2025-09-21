@@ -3,9 +3,19 @@ const morgan = require('morgan');
 const cors = require('cors');
 const process = require('process');
 const path = require('path');
+const {randomUUID} = require('crypto')
+
+
+process.on('uncaughtException', err => {
+    console.error('Uncaught Exception:', err);
+});
+
+process.on('unhandledRejection', reason => {
+    console.error('Unhandled Rejection:', reason);
+});
 
 // util
-const logger = require('./utils/logger');
+const {logger} = require('./utils/logger');
 
 // custom module
 // router modules
@@ -19,7 +29,7 @@ const articleRouter = require('./routes/articleR');
 const session = require('./middlewares/session');
 const {updateAccountProfileError,
     loginErrorHandler,
-    lastErrorHandler} = require('./middlewares/errors');
+    lastErrorHandler} = require('./middlewares/errorsHandler');
 
 const app = express();
 
@@ -35,12 +45,19 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(session);
 
+// set the request id for logger later
+app.use((req, res, next) => {
+    req.id = randomUUID();
+    next();
+})
+
 // logger middleware
 app.use((req, res, next)=>{
     logger.info('Incoming Request :', {
         method: req.method,
         url : req.url,
-        ip : req.ip
+        ip : req.ip,
+        reqId : req.id,
     })
     next();
 });
@@ -62,7 +79,6 @@ app.use('/', rootRouter);
 app.use((req, res)=>{
     res.redirect('/home');
 });
-
 
 // errors handler middleware
 app.use(lastErrorHandler)

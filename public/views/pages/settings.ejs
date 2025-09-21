@@ -49,7 +49,7 @@
 
                     <h5 class="card-title mb-3">Change Password</h5>
 
-                    <form action="/auth/settings/change-password" method="post">
+                    <form action="/auth/change-password" method="post">
                         <!-- Current Password -->
                         <div class="mb-3">
                             <label for="currentPassword" class="form-label">Current Password</label>
@@ -77,7 +77,7 @@
                     <!-- Danger Zone -->
                     <h5 class="card-title text-danger mb-3">Danger Zone</h5>
                     <p class="text-muted">Deleting your account is permanent and cannot be undone.</p>
-                    <form action="/auth/settings/delete-account" method="post" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+                    <form action="/auth/delete/<%=user.username%>" method="post" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
                         <button type="submit" class="btn btn-danger w-100">Delete Account</button>
                     </form>
                 </div>

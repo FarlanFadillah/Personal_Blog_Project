@@ -196,3 +196,329 @@
 {"ip":"::ffff:192.168.18.6","level":"info","message":"Incoming Request :","method":"GET","ms":"+8ms","timestamp":"20/09/2025, 13.17.48","url":"/home"}
 {"ip":"::ffff:192.168.18.6","level":"info","message":"Incoming Request :","method":"GET","ms":"+3s","timestamp":"20/09/2025, 13.17.52","url":"/assets/favicon.ico"}
 {"ip":"::ffff:192.168.18.6","level":"info","message":"Incoming Request :","method":"GET","ms":"+14ms","timestamp":"20/09/2025, 13.17.52","url":"/home"}
+{"level":"error","message":"logger.info is not a function","ms":"+0ms","timestamp":"20/09/2025, 22.24.23"}
+{"level":"error","message":"logger.info is not a function","ms":"+98ms","timestamp":"20/09/2025, 22.24.23"}
+{"level":"error","message":"logger.info is not a function","ms":"+49s","timestamp":"20/09/2025, 22.25.13"}
+{"level":"error","message":"logger.info is not a function","ms":"+90ms","timestamp":"20/09/2025, 22.25.13"}
+{"level":"error","message":"logger.info is not a function","ms":"+2s","timestamp":"20/09/2025, 22.25.15"}
+{"level":"error","message":"logger.info is not a function","ms":"+93ms","timestamp":"20/09/2025, 22.25.15"}
+{"level":"error","message":"logger.info is not a function","ms":"+21s","timestamp":"20/09/2025, 22.25.36"}
+{"level":"error","message":"logger.info is not a function","ms":"+76ms","timestamp":"20/09/2025, 22.25.36"}
+{"level":"error","message":"logger.info is not a function","ms":"+4s","timestamp":"20/09/2025, 22.25.40"}
+{"level":"error","message":"logger.info is not a function","ms":"+100ms","timestamp":"20/09/2025, 22.25.40"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","timestamp":"20/09/2025, 22.26.12","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+71ms","timestamp":"20/09/2025, 22.26.13","url":"/auth/login"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+200ms","timestamp":"20/09/2025, 22.26.13","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+28ms","timestamp":"20/09/2025, 22.26.13","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+3s","timestamp":"20/09/2025, 22.26.16","url":"/auth/login"}
+{"level":"error","message":"authLogger is not defined","ms":"+340ms","timestamp":"20/09/2025, 22.26.16"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+72ms","timestamp":"20/09/2025, 22.26.16","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12ms","timestamp":"20/09/2025, 22.26.16","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","timestamp":"20/09/2025, 22.26.50","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+49ms","timestamp":"20/09/2025, 22.26.51","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+3s","timestamp":"20/09/2025, 22.26.54","url":"/auth/login"}
+{"isAdmin":1,"level":"info","message":"User logged in","module":"Auth Ctrl","ms":"+355ms","timestamp":"20/09/2025, 22.26.54","username":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+14ms","timestamp":"20/09/2025, 22.26.54","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+160ms","timestamp":"20/09/2025, 22.26.54","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+17ms","timestamp":"20/09/2025, 22.26.54","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.26.56","url":"/auth/users"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+122ms","timestamp":"20/09/2025, 22.26.56","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12ms","timestamp":"20/09/2025, 22.26.56","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.26.57","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+173ms","timestamp":"20/09/2025, 22.26.57","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+13ms","timestamp":"20/09/2025, 22.26.57","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+638ms","timestamp":"20/09/2025, 22.26.58","url":"/auth/register"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+127ms","timestamp":"20/09/2025, 22.26.58","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+15ms","timestamp":"20/09/2025, 22.26.58","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.26.59","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+112ms","timestamp":"20/09/2025, 22.26.59","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+18ms","timestamp":"20/09/2025, 22.26.59","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+2s","timestamp":"20/09/2025, 22.27.01","url":"/article/new"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+113ms","timestamp":"20/09/2025, 22.27.01","url":"/article/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+20ms","timestamp":"20/09/2025, 22.27.01","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+2s","timestamp":"20/09/2025, 22.27.03","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+105ms","timestamp":"20/09/2025, 22.27.03","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+19ms","timestamp":"20/09/2025, 22.27.03","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.27.04","url":"/article/new"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+135ms","timestamp":"20/09/2025, 22.27.05","url":"/article/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+17ms","timestamp":"20/09/2025, 22.27.05","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+5s","timestamp":"20/09/2025, 22.27.10","url":"/article/new"}
+{"level":"error","message":"logger.info is not a function","ms":"+19ms","timestamp":"20/09/2025, 22.27.10"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+95ms","timestamp":"20/09/2025, 22.27.10","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+19ms","timestamp":"20/09/2025, 22.27.10","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","timestamp":"20/09/2025, 22.29.49","url":"/article/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+47ms","timestamp":"20/09/2025, 22.29.49","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+2s","timestamp":"20/09/2025, 22.29.51","url":"/article/new"}
+{"level":"info","message":"New Article created successfully","module":"Article Controller","ms":"+14ms","timestamp":"20/09/2025, 22.29.51"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+19ms","timestamp":"20/09/2025, 22.29.51","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+147ms","timestamp":"20/09/2025, 22.29.51","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+15ms","timestamp":"20/09/2025, 22.29.51","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+0ms","timestamp":"20/09/2025, 22.29.55","url":"/article/delete/25"}
+{"level":"info","message":"Article deleted successfully","module":"Article Controller","ms":"+19ms","timestamp":"20/09/2025, 22.29.55"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+28ms","timestamp":"20/09/2025, 22.29.55","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+200ms","timestamp":"20/09/2025, 22.29.56","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+42ms","timestamp":"20/09/2025, 22.29.56","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+0ms","timestamp":"20/09/2025, 22.29.58","url":"/article/delete/24"}
+{"level":"info","message":"Article deleted successfully","module":"Article Controller","ms":"+22ms","timestamp":"20/09/2025, 22.29.58"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+44ms","timestamp":"20/09/2025, 22.29.58","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+219ms","timestamp":"20/09/2025, 22.29.58","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+36ms","timestamp":"20/09/2025, 22.29.58","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","timestamp":"20/09/2025, 22.30.00","url":"/auth/users"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+124ms","timestamp":"20/09/2025, 22.30.00","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+17ms","timestamp":"20/09/2025, 22.30.00","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+3s","timestamp":"20/09/2025, 22.30.03","url":"/auth/delete/adit"}
+{"level":"error","message":"Can't Delete this user","ms":"+6ms","timestamp":"20/09/2025, 22.30.03"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+86ms","timestamp":"20/09/2025, 22.30.03","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+14ms","timestamp":"20/09/2025, 22.30.03","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+2s","timestamp":"20/09/2025, 22.30.05","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+17ms","timestamp":"20/09/2025, 22.30.05","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.30.06","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+123ms","timestamp":"20/09/2025, 22.30.06","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+35ms","timestamp":"20/09/2025, 22.30.06","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.30.08","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+171ms","timestamp":"20/09/2025, 22.30.08","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12ms","timestamp":"20/09/2025, 22.30.08","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+5s","timestamp":"20/09/2025, 22.30.12","url":"/auth/delete/alan"}
+{"level":"error","message":"Can't Delete this user","ms":"+8ms","timestamp":"20/09/2025, 22.30.12"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+98ms","timestamp":"20/09/2025, 22.30.12","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+30ms","timestamp":"20/09/2025, 22.30.12","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.30.14","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12ms","timestamp":"20/09/2025, 22.30.14","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+820ms","timestamp":"20/09/2025, 22.30.15","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+11ms","timestamp":"20/09/2025, 22.30.15","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+514ms","timestamp":"20/09/2025, 22.30.15","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+105ms","timestamp":"20/09/2025, 22.30.15","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+15ms","timestamp":"20/09/2025, 22.30.15","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","timestamp":"20/09/2025, 22.33.40","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+244ms","timestamp":"20/09/2025, 22.33.40","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+26ms","timestamp":"20/09/2025, 22.33.40","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+2s","timestamp":"20/09/2025, 22.33.42","url":"/auth/delete/alan"}
+{"level":"error","message":"Can't Delete this user","module":"authentication router","ms":"+14ms","timestamp":"20/09/2025, 22.33.42"}
+{"level":"error","message":"Can't Delete this user","ms":"+4ms","timestamp":"20/09/2025, 22.33.42"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+32ms","timestamp":"20/09/2025, 22.33.42","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+134ms","timestamp":"20/09/2025, 22.33.42","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+15ms","timestamp":"20/09/2025, 22.33.43","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+11s","timestamp":"20/09/2025, 22.33.53","url":"/auth/users"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+229ms","timestamp":"20/09/2025, 22.33.53","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+50ms","timestamp":"20/09/2025, 22.33.53","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+2s","timestamp":"20/09/2025, 22.33.56","url":"/auth/delete/adit"}
+{"level":"error","message":"Can't Delete this user","module":"authentication router","ms":"+13ms","timestamp":"20/09/2025, 22.33.56"}
+{"level":"error","message":"Can't Delete this user","ms":"+3ms","timestamp":"20/09/2025, 22.33.56"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+35ms","timestamp":"20/09/2025, 22.33.56","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+110ms","timestamp":"20/09/2025, 22.33.56","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+22ms","timestamp":"20/09/2025, 22.33.56","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+22s","timestamp":"20/09/2025, 22.34.18","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+113ms","timestamp":"20/09/2025, 22.34.18","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+16ms","timestamp":"20/09/2025, 22.34.18","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+3s","timestamp":"20/09/2025, 22.34.22","url":"/auth/settings"}
+{"level":"info","message":"User profile updated","module":"Auth Ctrl","ms":"+21ms","timestamp":"20/09/2025, 22.34.22","username":"alan&lt;a href=&#x27;https:&#x2F;&#x2F;google.com&#x27;&gt;Google&lt;&#x2F;a&gt;"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+14ms","timestamp":"20/09/2025, 22.34.22","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+144ms","timestamp":"20/09/2025, 22.34.22","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+33ms","timestamp":"20/09/2025, 22.34.22","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3s","timestamp":"20/09/2025, 22.34.24","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+108ms","timestamp":"20/09/2025, 22.34.25","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12ms","timestamp":"20/09/2025, 22.34.25","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+5s","timestamp":"20/09/2025, 22.34.30","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+24ms","timestamp":"20/09/2025, 22.34.30","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+439ms","timestamp":"20/09/2025, 22.34.31","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+92ms","timestamp":"20/09/2025, 22.34.31","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+10ms","timestamp":"20/09/2025, 22.34.31","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.34.32","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+119ms","timestamp":"20/09/2025, 22.34.32","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+14ms","timestamp":"20/09/2025, 22.34.32","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+3s","timestamp":"20/09/2025, 22.34.35","url":"/auth/settings"}
+{"level":"info","message":"User profile updated","module":"Auth Ctrl","ms":"+10ms","timestamp":"20/09/2025, 22.34.35","username":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+14ms","timestamp":"20/09/2025, 22.34.35","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+138ms","timestamp":"20/09/2025, 22.34.35","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+14ms","timestamp":"20/09/2025, 22.34.35","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+6s","timestamp":"20/09/2025, 22.34.41","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+104ms","timestamp":"20/09/2025, 22.34.41","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+15ms","timestamp":"20/09/2025, 22.34.41","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+2s","timestamp":"20/09/2025, 22.34.44","url":"/auth/settings"}
+{"level":"info","message":"User profile updated","module":"Auth Ctrl","ms":"+9ms","timestamp":"20/09/2025, 22.34.44","username":"alan&lt;a href=&#x27;https:&#x2F;&#x2F;google.com&#x27;&gt;Google&lt;&#x2F;a&gt;"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12ms","timestamp":"20/09/2025, 22.34.44","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+105ms","timestamp":"20/09/2025, 22.34.44","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+18ms","timestamp":"20/09/2025, 22.34.44","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+6s","timestamp":"20/09/2025, 22.34.50","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+130ms","timestamp":"20/09/2025, 22.34.50","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+11ms","timestamp":"20/09/2025, 22.34.50","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+2s","timestamp":"20/09/2025, 22.34.52","url":"/auth/settings"}
+{"level":"info","message":"User profile updated","module":"Auth Ctrl","ms":"+10ms","timestamp":"20/09/2025, 22.34.52","username":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12ms","timestamp":"20/09/2025, 22.34.52","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+120ms","timestamp":"20/09/2025, 22.34.52","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+16ms","timestamp":"20/09/2025, 22.34.52","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+59s","timestamp":"20/09/2025, 22.35.51","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+121ms","timestamp":"20/09/2025, 22.35.51","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+14ms","timestamp":"20/09/2025, 22.35.51","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+8s","timestamp":"20/09/2025, 22.35.59","url":"/auth/settings"}
+{"level":"info","message":"User profile updated","module":"Auth Ctrl","ms":"+11ms","timestamp":"20/09/2025, 22.35.59","username":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+16ms","timestamp":"20/09/2025, 22.35.59","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+110ms","timestamp":"20/09/2025, 22.35.59","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+18ms","timestamp":"20/09/2025, 22.35.59","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+760ms","timestamp":"20/09/2025, 22.36.00","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+91ms","timestamp":"20/09/2025, 22.36.00","url":"/auth/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+14ms","timestamp":"20/09/2025, 22.36.00","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+3s","timestamp":"20/09/2025, 22.36.03","url":"/auth/settings"}
+{"level":"info","message":"User profile updated","module":"Auth Ctrl","ms":"+10ms","timestamp":"20/09/2025, 22.36.03","username":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+15ms","timestamp":"20/09/2025, 22.36.03","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+113ms","timestamp":"20/09/2025, 22.36.03","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+17ms","timestamp":"20/09/2025, 22.36.03","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+2m","timestamp":"20/09/2025, 22.37.34","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+120ms","timestamp":"20/09/2025, 22.37.35","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+13ms","timestamp":"20/09/2025, 22.37.35","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+24s","timestamp":"20/09/2025, 22.37.58","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+146ms","timestamp":"20/09/2025, 22.37.59","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+19ms","timestamp":"20/09/2025, 22.37.59","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+4m","timestamp":"20/09/2025, 22.42.12","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+200ms","timestamp":"20/09/2025, 22.42.12","url":"/public/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+14ms","timestamp":"20/09/2025, 22.42.12","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+5s","timestamp":"20/09/2025, 22.42.17","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+127ms","timestamp":"20/09/2025, 22.42.17","url":"/public/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+66ms","timestamp":"20/09/2025, 22.42.17","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+5s","timestamp":"20/09/2025, 22.42.23","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+83ms","timestamp":"20/09/2025, 22.42.23","url":"/public/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12ms","timestamp":"20/09/2025, 22.42.23","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+39s","timestamp":"20/09/2025, 22.43.02","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+105ms","timestamp":"20/09/2025, 22.43.02","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+21ms","timestamp":"20/09/2025, 22.43.02","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+4s","timestamp":"20/09/2025, 22.43.06","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+99ms","timestamp":"20/09/2025, 22.43.06","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+16ms","timestamp":"20/09/2025, 22.43.06","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3s","timestamp":"20/09/2025, 22.43.09","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+86ms","timestamp":"20/09/2025, 22.43.09","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+16ms","timestamp":"20/09/2025, 22.43.09","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+4s","timestamp":"20/09/2025, 22.43.13","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+124ms","timestamp":"20/09/2025, 22.43.13","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+26ms","timestamp":"20/09/2025, 22.43.13","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+5s","timestamp":"20/09/2025, 22.43.18","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+294ms","timestamp":"20/09/2025, 22.43.18","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+17ms","timestamp":"20/09/2025, 22.43.18","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+6s","timestamp":"20/09/2025, 22.43.24","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+105ms","timestamp":"20/09/2025, 22.43.24","url":"/assets/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+11ms","timestamp":"20/09/2025, 22.43.24","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1m","timestamp":"20/09/2025, 22.44.44","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+5s","timestamp":"20/09/2025, 22.44.50","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.44.51","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+10s","timestamp":"20/09/2025, 22.45.01","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+6s","timestamp":"20/09/2025, 22.45.07","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3m","timestamp":"20/09/2025, 22.48.22","url":"/asdf"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+15ms","timestamp":"20/09/2025, 22.48.22","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","timestamp":"20/09/2025, 22.52.13","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.52.14","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+5s","timestamp":"20/09/2025, 22.52.18","url":"/auth/settings"}
+{"level":"info","message":"User profile updated","module":"Auth Ctrl","ms":"+18ms","timestamp":"20/09/2025, 22.52.19","username":"alan&lt;&gt;"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming Request :","method":"GET","ms":"+18ms","timestamp":"20/09/2025, 22.52.19","url":"/admin"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming Request :","method":"GET","ms":"+2s","timestamp":"20/09/2025, 22.52.20","url":"/auth/settings"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming Request :","method":"POST","ms":"+4s","timestamp":"20/09/2025, 22.52.24","url":"/auth/settings"}
+{"level":"info","message":"User profile updated","module":"Auth Ctrl","ms":"+10ms","timestamp":"20/09/2025, 22.52.24","username":"alan"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming Request :","method":"GET","ms":"+19ms","timestamp":"20/09/2025, 22.52.24","url":"/admin"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","timestamp":"20/09/2025, 22.52.26","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+0ms","timestamp":"20/09/2025, 22.53.24","url":"/auth/settings"}
+{"level":"info","message":"User profile updated","module":"Auth Ctrl","ms":"+50ms","timestamp":"20/09/2025, 22.53.24","username":"alan&lt;&gt;"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+36ms","timestamp":"20/09/2025, 22.53.24","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+4s","timestamp":"20/09/2025, 22.53.28","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+6s","timestamp":"20/09/2025, 22.53.34","url":"/auth/settings"}
+{"level":"info","message":"User profile updated","module":"Auth Ctrl","ms":"+14ms","timestamp":"20/09/2025, 22.53.34","username":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+23ms","timestamp":"20/09/2025, 22.53.34","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","timestamp":"20/09/2025, 22.55.18","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+3s","timestamp":"20/09/2025, 22.55.21","url":"/auth/settings"}
+{"level":"error","message":"username can't contain html tags","module":"Validation Err","ms":"+15ms","timestamp":"20/09/2025, 22.55.21"}
+{"level":"error","message":"Validation failed.","module":"authentication router","ms":"+1ms","timestamp":"20/09/2025, 22.55.21"}
+{"level":"error","message":"Validation failed.","ms":"+4ms","timestamp":"20/09/2025, 22.55.21"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+18ms","timestamp":"20/09/2025, 22.55.21","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+1m","timestamp":"20/09/2025, 22.56.36","url":"/auth/change-password"}
+{"level":"error","message":"Password mismatch","module":"authentication router","ms":"+363ms","timestamp":"20/09/2025, 22.56.37"}
+{"level":"error","message":"Password mismatch","ms":"+2ms","timestamp":"20/09/2025, 22.56.37"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+121ms","timestamp":"20/09/2025, 22.56.37","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+17ms","timestamp":"20/09/2025, 22.56.37","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+0ms","timestamp":"20/09/2025, 22.57.23","url":"/auth/change-password"}
+{"level":"error","message":"Password mismatch","module":"authentication router","ms":"+338ms","timestamp":"20/09/2025, 22.57.24"}
+{"level":"error","message":"Password mismatch","ms":"+7ms","timestamp":"20/09/2025, 22.57.24"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+19ms","timestamp":"20/09/2025, 22.57.24","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+7s","timestamp":"20/09/2025, 22.57.31","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+8s","timestamp":"20/09/2025, 22.57.39","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"54fa5d52-3cff-4efe-afa6-762f2e2e1490","timestamp":"20/09/2025, 23.24.14","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+36s","reqId":"7be0ce66-a57d-436d-8203-6fc43eb6cdae","timestamp":"20/09/2025, 23.24.49","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+8s","reqId":"eee613df-f94e-4e43-a8d2-a2a0245185bb","timestamp":"20/09/2025, 23.24.57","url":"/auth/settings"}
+{"level":"error","message":"username can't contain html tags","module":"Validation Err","ms":"+14ms","timestamp":"20/09/2025, 23.24.57"}
+{"level":"error","message":"Validation failed.","module":"authentication router","ms":"+2ms","reqId":"eee613df-f94e-4e43-a8d2-a2a0245185bb","timestamp":"20/09/2025, 23.24.57"}
+{"level":"error","message":"Validation failed.","ms":"+7ms","reqId":"eee613df-f94e-4e43-a8d2-a2a0245185bb","timestamp":"20/09/2025, 23.24.57"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+24ms","reqId":"66ac5096-1704-4ead-8cea-71fa1b466876","timestamp":"20/09/2025, 23.24.57","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+0ms","reqId":"456991b9-bba2-4f94-91c0-c12d17d62a60","timestamp":"20/09/2025, 23.25.46","url":"/auth/settings"}
+{"level":"error","message":"username can't contain html tags","module":"Validation Err","ms":"+14ms","reqId":"456991b9-bba2-4f94-91c0-c12d17d62a60","timestamp":"20/09/2025, 23.25.46"}
+{"level":"error","message":"Validation failed.","module":"authentication router","ms":"+1ms","reqId":"456991b9-bba2-4f94-91c0-c12d17d62a60","timestamp":"20/09/2025, 23.25.46"}
+{"level":"error","message":"Validation failed.","ms":"+7ms","reqId":"456991b9-bba2-4f94-91c0-c12d17d62a60","timestamp":"20/09/2025, 23.25.46"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+23ms","reqId":"85024835-8e52-4d01-ae9e-0af33e0f7282","timestamp":"20/09/2025, 23.25.46","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+2h","reqId":"f66c43cd-a173-4673-bef9-aec260ae5bf2","timestamp":"21/09/2025, 01.44.39","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+26ms","reqId":"9c0356b9-b1c7-4f93-a759-5b0ad89f4690","timestamp":"21/09/2025, 01.44.39","url":"/auth/login"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+250ms","reqId":"c8818631-397c-4271-8878-e8a89bfd4ca7","timestamp":"21/09/2025, 01.44.39","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+17ms","reqId":"59abfc7a-0719-4815-b00a-bd8a29f73360","timestamp":"21/09/2025, 01.44.39","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"293ce540-e094-490e-b872-eed7bfd7ac2c","timestamp":"21/09/2025, 11.16.17","url":"/"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+30ms","reqId":"f01a7c71-9133-4f3f-b1ce-05f2902c1b45","timestamp":"21/09/2025, 11.16.17","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+2s","reqId":"9f506ab4-2147-486f-84b1-75f0f7dca8a2","timestamp":"21/09/2025, 11.16.20","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+20ms","reqId":"5ae1e2ff-6ff8-49af-823e-a678ad19f826","timestamp":"21/09/2025, 11.16.20","url":"/auth/login"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+178ms","reqId":"5bc0631a-4d87-4c6c-9dc4-c4aa3ce8efa1","timestamp":"21/09/2025, 11.16.20","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+31ms","reqId":"1ad86b06-df08-45a2-b025-e9fd9f15ef31","timestamp":"21/09/2025, 11.16.20","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+4s","reqId":"4982f108-d4cb-4217-9dbb-ff22ebf0f0b3","timestamp":"21/09/2025, 11.16.23","url":"/auth/login"}
+{"addition":{"isAdmin":1,"module":"Auth Ctrl","username":"alan"},"ip":"::1","level":"info","message":"User logged in","method":"POST","ms":"+335ms","reqId":"4982f108-d4cb-4217-9dbb-ff22ebf0f0b3","timestamp":"21/09/2025, 11.16.24","url":"/login","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12ms","reqId":"51e9989b-639e-446a-a927-099c4d4a428b","timestamp":"21/09/2025, 11.16.24","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3s","reqId":"112c159e-eae5-4053-9915-4a92e0ebb447","timestamp":"21/09/2025, 11.16.26","url":"/article/new"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+6s","reqId":"7156a2b9-2a1e-4f31-827a-2453e8c0a5dc","timestamp":"21/09/2025, 11.16.32","url":"/article/new"}
+{"addition":{"module":"Article Ctrl"},"ip":"::1","level":"info","message":"Article created","method":"POST","ms":"+28ms","reqId":"7156a2b9-2a1e-4f31-827a-2453e8c0a5dc","timestamp":"21/09/2025, 11.16.32","url":"/new","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+24ms","reqId":"f8103b86-bae7-4aad-a01f-fcb9d311e8ac","timestamp":"21/09/2025, 11.16.32","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+0ms","reqId":"ae9394df-fb6d-4a86-a5cf-65dea5d32269","timestamp":"21/09/2025, 11.16.43","url":"/article/delete/26"}
+{"addition":{"module":"Article Ctrl"},"ip":"::1","level":"info","message":"Article deleted","method":"POST","ms":"+11ms","reqId":"ae9394df-fb6d-4a86-a5cf-65dea5d32269","timestamp":"21/09/2025, 11.16.43","url":"/delete/26","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+41ms","reqId":"0a86fdcf-1968-46de-9221-e4652ead1be8","timestamp":"21/09/2025, 11.16.43","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"514bebc4-2ad5-4aec-b96d-fc19e9808658","timestamp":"21/09/2025, 11.16.50","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+3s","reqId":"78b4cf75-34e8-421c-a572-0d1932ca86cd","timestamp":"21/09/2025, 11.16.53","url":"/auth/delete/alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+10ms","reqId":"78b4cf75-34e8-421c-a572-0d1932ca86cd","timestamp":"21/09/2025, 11.16.53","url":"/delete/alan","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+12ms","reqId":"78b4cf75-34e8-421c-a572-0d1932ca86cd","timestamp":"21/09/2025, 11.16.53","url":"/auth/delete/alan","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+23ms","reqId":"601eac4f-07a9-42d0-9c5a-075fc3d9ff93","timestamp":"21/09/2025, 11.16.54","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"0478e4c1-e59c-4e64-9821-ab488db9782f","timestamp":"21/09/2025, 11.53.32","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+0ms","reqId":"21c8faf8-8329-49d8-a760-e76d5e752c91","timestamp":"21/09/2025, 11.54.25","url":"/auth/settings"}
+{"addition":{"module":"ValErr Middwre"},"ip":"::1","level":"error","message":"username can't contain html tags","method":"POST","ms":"+12ms","reqId":"21c8faf8-8329-49d8-a760-e76d5e752c91","timestamp":"21/09/2025, 11.54.25","url":"/settings","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+3ms","reqId":"21c8faf8-8329-49d8-a760-e76d5e752c91","timestamp":"21/09/2025, 11.54.25","url":"/settings","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+6ms","reqId":"21c8faf8-8329-49d8-a760-e76d5e752c91","timestamp":"21/09/2025, 11.54.25","url":"/auth/settings","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+20ms","reqId":"36da75e1-75a6-47bb-9985-591d6e98c961","timestamp":"21/09/2025, 11.54.25","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"ea138808-5893-4b78-9d21-821d7c753c5b","timestamp":"21/09/2025, 11.54.51","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+4s","reqId":"fcd68652-a668-47b7-a883-bec24dce7bcb","timestamp":"21/09/2025, 11.54.55","url":"/auth/settings"}
+{"addition":{"module":"ValErr Middwre"},"ip":"::1","level":"error","message":"last name can't contain html tags","method":"POST","ms":"+27ms","reqId":"fcd68652-a668-47b7-a883-bec24dce7bcb","timestamp":"21/09/2025, 11.54.55","url":"/settings","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"CustomError is not defined","method":"POST","ms":"+2ms","reqId":"fcd68652-a668-47b7-a883-bec24dce7bcb","timestamp":"21/09/2025, 11.54.55","url":"/settings","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"CustomError is not defined","method":"POST","ms":"+9ms","reqId":"fcd68652-a668-47b7-a883-bec24dce7bcb","timestamp":"21/09/2025, 11.54.55","url":"/auth/settings","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+22ms","reqId":"a9f5d3f6-3602-4440-9c65-55c77aec13d0","timestamp":"21/09/2025, 11.54.55","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"8629ce6e-bf51-4302-8b4e-e175f61bb433","timestamp":"21/09/2025, 11.55.16","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+2s","reqId":"56b0370e-2cb4-4ff9-8663-48c484acf187","timestamp":"21/09/2025, 11.55.18","url":"/auth/settings"}
+{"addition":{"module":"ValErr Middwre"},"ip":"::1","level":"error","message":"username can't contain html tags","method":"POST","ms":"+15ms","reqId":"56b0370e-2cb4-4ff9-8663-48c484acf187","timestamp":"21/09/2025, 11.55.18","url":"/settings","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+1ms","reqId":"56b0370e-2cb4-4ff9-8663-48c484acf187","timestamp":"21/09/2025, 11.55.18","url":"/settings","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+11ms","reqId":"56b0370e-2cb4-4ff9-8663-48c484acf187","timestamp":"21/09/2025, 11.55.18","url":"/auth/settings","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+18ms","reqId":"c179363d-431a-4d26-992e-a361c6b3537f","timestamp":"21/09/2025, 11.55.18","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+11s","reqId":"bd4739ae-1536-4972-bee8-59ed6df549ad","timestamp":"21/09/2025, 11.55.29","url":"/auth/change-password"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Password mismatch","method":"POST","ms":"+331ms","reqId":"bd4739ae-1536-4972-bee8-59ed6df549ad","timestamp":"21/09/2025, 11.55.30","url":"/change-password","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Password mismatch","method":"POST","ms":"+2ms","reqId":"bd4739ae-1536-4972-bee8-59ed6df549ad","timestamp":"21/09/2025, 11.55.30","url":"/auth/change-password","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+8ms","reqId":"447ee52e-9f06-41b4-8915-8ccd0727c59b","timestamp":"21/09/2025, 11.55.30","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+0ms","reqId":"214ca0f3-d2c4-4d26-b781-f3e416be4f99","timestamp":"21/09/2025, 11.56.22","url":"/auth/change-password"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Password mismatch","method":"POST","ms":"+386ms","reqId":"214ca0f3-d2c4-4d26-b781-f3e416be4f99","timestamp":"21/09/2025, 11.56.22","url":"/change-password","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Password mismatch","method":"POST","ms":"+7ms","reqId":"214ca0f3-d2c4-4d26-b781-f3e416be4f99","timestamp":"21/09/2025, 11.56.22","url":"/auth/change-password","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+18ms","reqId":"c9aa0e34-3a93-4fc6-a221-87c3f4504e3b","timestamp":"21/09/2025, 11.56.22","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+0ms","reqId":"926e43d4-8a7e-4e0b-aa62-2a2ec840e879","timestamp":"21/09/2025, 11.56.35","url":"/auth/change-password"}
+{"addition":{"module":"ValErr Middwre"},"ip":"::1","level":"error","message":"Password must be at least 8 characters long","method":"POST","ms":"+9ms","reqId":"926e43d4-8a7e-4e0b-aa62-2a2ec840e879","timestamp":"21/09/2025, 11.56.35","url":"/change-password","user":"alan"}
+{"addition":{"module":"ValErr Middwre"},"ip":"::1","level":"error","message":"Your new password should not be the same as your old one","method":"POST","ms":"+3ms","reqId":"926e43d4-8a7e-4e0b-aa62-2a2ec840e879","timestamp":"21/09/2025, 11.56.35","url":"/change-password","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+2ms","reqId":"926e43d4-8a7e-4e0b-aa62-2a2ec840e879","timestamp":"21/09/2025, 11.56.35","url":"/change-password","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+7ms","reqId":"926e43d4-8a7e-4e0b-aa62-2a2ec840e879","timestamp":"21/09/2025, 11.56.35","url":"/auth/change-password","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+21ms","reqId":"fede1154-2872-4bbb-85da-d93134c796c8","timestamp":"21/09/2025, 11.56.35","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+8s","reqId":"79d338d2-fdac-437a-a652-efb160b05a3d","timestamp":"21/09/2025, 11.56.42","url":"/auth/delete/alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+7ms","reqId":"79d338d2-fdac-437a-a652-efb160b05a3d","timestamp":"21/09/2025, 11.56.42","url":"/delete/alan","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+4ms","reqId":"79d338d2-fdac-437a-a652-efb160b05a3d","timestamp":"21/09/2025, 11.56.42","url":"/auth/delete/alan","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+46ms","reqId":"621fbbdb-37bb-4dcc-86c0-8a615aa9542c","timestamp":"21/09/2025, 11.56.42","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"e7e0c06b-8ffc-4e74-aaf9-69b8a8ad2107","timestamp":"21/09/2025, 11.57.24","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+940ms","reqId":"ee7155c3-ad6f-4ff8-9dc9-d09b938e991f","timestamp":"21/09/2025, 11.57.25","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+2s","reqId":"422c95ee-31a8-49b3-b3c4-dd2a90069abf","timestamp":"21/09/2025, 11.57.27","url":"/auth/delete/alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+10ms","reqId":"422c95ee-31a8-49b3-b3c4-dd2a90069abf","timestamp":"21/09/2025, 11.57.27","url":"/delete/alan","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+7ms","reqId":"422c95ee-31a8-49b3-b3c4-dd2a90069abf","timestamp":"21/09/2025, 11.57.27","url":"/auth/delete/alan","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+11ms","reqId":"65dd30fa-0ca7-4bf5-bf47-49974c05cc2a","timestamp":"21/09/2025, 11.57.27","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3s","reqId":"bc6d6dd0-ea42-468c-9ef0-92d6b069fc2c","timestamp":"21/09/2025, 11.57.30","url":"/auth/users"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+2s","reqId":"c142bbdd-c13c-4af2-918f-4ae11168a99b","timestamp":"21/09/2025, 11.57.32","url":"/auth/delete/adit"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+14ms","reqId":"c142bbdd-c13c-4af2-918f-4ae11168a99b","timestamp":"21/09/2025, 11.57.32","url":"/delete/adit","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+3ms","reqId":"c142bbdd-c13c-4af2-918f-4ae11168a99b","timestamp":"21/09/2025, 11.57.32","url":"/auth/delete/adit","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+23ms","reqId":"e4400cc8-02e8-4cba-839d-de3d2e81f632","timestamp":"21/09/2025, 11.57.32","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+4s","reqId":"3143a240-6f22-4fa2-8d68-ccdcaeaf8d28","timestamp":"21/09/2025, 11.57.35","url":"/auth/users"}

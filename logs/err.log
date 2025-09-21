@@ -4,3 +4,59 @@
 {"level":"error","message":"content not found","module":"RootCtrl","ms":"+13ms","timestamp":"19/09/2025, 23.16.46"}
 {"level":"error","message":"content not found","module":"RootCtrl","ms":"+10ms","timestamp":"19/09/2025, 23.17.49"}
 {"article_id":"1","level":"error","message":"Article not found","module":"RootCtrl","ms":"+12ms","timestamp":"19/09/2025, 23.18.39"}
+{"level":"error","message":"logger.info is not a function","ms":"+0ms","timestamp":"20/09/2025, 22.24.23"}
+{"level":"error","message":"logger.info is not a function","ms":"+98ms","timestamp":"20/09/2025, 22.24.23"}
+{"level":"error","message":"logger.info is not a function","ms":"+49s","timestamp":"20/09/2025, 22.25.13"}
+{"level":"error","message":"logger.info is not a function","ms":"+90ms","timestamp":"20/09/2025, 22.25.13"}
+{"level":"error","message":"logger.info is not a function","ms":"+2s","timestamp":"20/09/2025, 22.25.15"}
+{"level":"error","message":"logger.info is not a function","ms":"+93ms","timestamp":"20/09/2025, 22.25.15"}
+{"level":"error","message":"logger.info is not a function","ms":"+21s","timestamp":"20/09/2025, 22.25.36"}
+{"level":"error","message":"logger.info is not a function","ms":"+76ms","timestamp":"20/09/2025, 22.25.36"}
+{"level":"error","message":"logger.info is not a function","ms":"+4s","timestamp":"20/09/2025, 22.25.40"}
+{"level":"error","message":"logger.info is not a function","ms":"+100ms","timestamp":"20/09/2025, 22.25.40"}
+{"level":"error","message":"authLogger is not defined","ms":"+340ms","timestamp":"20/09/2025, 22.26.16"}
+{"level":"error","message":"logger.info is not a function","ms":"+19ms","timestamp":"20/09/2025, 22.27.10"}
+{"level":"error","message":"Can't Delete this user","ms":"+6ms","timestamp":"20/09/2025, 22.30.03"}
+{"level":"error","message":"Can't Delete this user","ms":"+8ms","timestamp":"20/09/2025, 22.30.12"}
+{"level":"error","message":"Can't Delete this user","module":"authentication router","ms":"+14ms","timestamp":"20/09/2025, 22.33.42"}
+{"level":"error","message":"Can't Delete this user","ms":"+4ms","timestamp":"20/09/2025, 22.33.42"}
+{"level":"error","message":"Can't Delete this user","module":"authentication router","ms":"+13ms","timestamp":"20/09/2025, 22.33.56"}
+{"level":"error","message":"Can't Delete this user","ms":"+3ms","timestamp":"20/09/2025, 22.33.56"}
+{"level":"error","message":"username can't contain html tags","module":"Validation Err","ms":"+15ms","timestamp":"20/09/2025, 22.55.21"}
+{"level":"error","message":"Validation failed.","module":"authentication router","ms":"+1ms","timestamp":"20/09/2025, 22.55.21"}
+{"level":"error","message":"Validation failed.","ms":"+4ms","timestamp":"20/09/2025, 22.55.21"}
+{"level":"error","message":"Password mismatch","module":"authentication router","ms":"+363ms","timestamp":"20/09/2025, 22.56.37"}
+{"level":"error","message":"Password mismatch","ms":"+2ms","timestamp":"20/09/2025, 22.56.37"}
+{"level":"error","message":"Password mismatch","module":"authentication router","ms":"+338ms","timestamp":"20/09/2025, 22.57.24"}
+{"level":"error","message":"Password mismatch","ms":"+7ms","timestamp":"20/09/2025, 22.57.24"}
+{"level":"error","message":"username can't contain html tags","module":"Validation Err","ms":"+14ms","timestamp":"20/09/2025, 23.24.57"}
+{"level":"error","message":"Validation failed.","module":"authentication router","ms":"+2ms","reqId":"eee613df-f94e-4e43-a8d2-a2a0245185bb","timestamp":"20/09/2025, 23.24.57"}
+{"level":"error","message":"Validation failed.","ms":"+7ms","reqId":"eee613df-f94e-4e43-a8d2-a2a0245185bb","timestamp":"20/09/2025, 23.24.57"}
+{"level":"error","message":"username can't contain html tags","module":"Validation Err","ms":"+14ms","reqId":"456991b9-bba2-4f94-91c0-c12d17d62a60","timestamp":"20/09/2025, 23.25.46"}
+{"level":"error","message":"Validation failed.","module":"authentication router","ms":"+1ms","reqId":"456991b9-bba2-4f94-91c0-c12d17d62a60","timestamp":"20/09/2025, 23.25.46"}
+{"level":"error","message":"Validation failed.","ms":"+7ms","reqId":"456991b9-bba2-4f94-91c0-c12d17d62a60","timestamp":"20/09/2025, 23.25.46"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+10ms","reqId":"78b4cf75-34e8-421c-a572-0d1932ca86cd","timestamp":"21/09/2025, 11.16.53","url":"/delete/alan","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+12ms","reqId":"78b4cf75-34e8-421c-a572-0d1932ca86cd","timestamp":"21/09/2025, 11.16.53","url":"/auth/delete/alan","user":"alan"}
+{"addition":{"module":"ValErr Middwre"},"ip":"::1","level":"error","message":"username can't contain html tags","method":"POST","ms":"+12ms","reqId":"21c8faf8-8329-49d8-a760-e76d5e752c91","timestamp":"21/09/2025, 11.54.25","url":"/settings","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+3ms","reqId":"21c8faf8-8329-49d8-a760-e76d5e752c91","timestamp":"21/09/2025, 11.54.25","url":"/settings","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+6ms","reqId":"21c8faf8-8329-49d8-a760-e76d5e752c91","timestamp":"21/09/2025, 11.54.25","url":"/auth/settings","user":"alan"}
+{"addition":{"module":"ValErr Middwre"},"ip":"::1","level":"error","message":"last name can't contain html tags","method":"POST","ms":"+27ms","reqId":"fcd68652-a668-47b7-a883-bec24dce7bcb","timestamp":"21/09/2025, 11.54.55","url":"/settings","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"CustomError is not defined","method":"POST","ms":"+2ms","reqId":"fcd68652-a668-47b7-a883-bec24dce7bcb","timestamp":"21/09/2025, 11.54.55","url":"/settings","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"CustomError is not defined","method":"POST","ms":"+9ms","reqId":"fcd68652-a668-47b7-a883-bec24dce7bcb","timestamp":"21/09/2025, 11.54.55","url":"/auth/settings","user":"alan"}
+{"addition":{"module":"ValErr Middwre"},"ip":"::1","level":"error","message":"username can't contain html tags","method":"POST","ms":"+15ms","reqId":"56b0370e-2cb4-4ff9-8663-48c484acf187","timestamp":"21/09/2025, 11.55.18","url":"/settings","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+1ms","reqId":"56b0370e-2cb4-4ff9-8663-48c484acf187","timestamp":"21/09/2025, 11.55.18","url":"/settings","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+11ms","reqId":"56b0370e-2cb4-4ff9-8663-48c484acf187","timestamp":"21/09/2025, 11.55.18","url":"/auth/settings","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Password mismatch","method":"POST","ms":"+331ms","reqId":"bd4739ae-1536-4972-bee8-59ed6df549ad","timestamp":"21/09/2025, 11.55.30","url":"/change-password","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Password mismatch","method":"POST","ms":"+2ms","reqId":"bd4739ae-1536-4972-bee8-59ed6df549ad","timestamp":"21/09/2025, 11.55.30","url":"/auth/change-password","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Password mismatch","method":"POST","ms":"+386ms","reqId":"214ca0f3-d2c4-4d26-b781-f3e416be4f99","timestamp":"21/09/2025, 11.56.22","url":"/change-password","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Password mismatch","method":"POST","ms":"+7ms","reqId":"214ca0f3-d2c4-4d26-b781-f3e416be4f99","timestamp":"21/09/2025, 11.56.22","url":"/auth/change-password","user":"alan"}
+{"addition":{"module":"ValErr Middwre"},"ip":"::1","level":"error","message":"Password must be at least 8 characters long","method":"POST","ms":"+9ms","reqId":"926e43d4-8a7e-4e0b-aa62-2a2ec840e879","timestamp":"21/09/2025, 11.56.35","url":"/change-password","user":"alan"}
+{"addition":{"module":"ValErr Middwre"},"ip":"::1","level":"error","message":"Your new password should not be the same as your old one","method":"POST","ms":"+3ms","reqId":"926e43d4-8a7e-4e0b-aa62-2a2ec840e879","timestamp":"21/09/2025, 11.56.35","url":"/change-password","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+2ms","reqId":"926e43d4-8a7e-4e0b-aa62-2a2ec840e879","timestamp":"21/09/2025, 11.56.35","url":"/change-password","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Validation failed.","method":"POST","ms":"+7ms","reqId":"926e43d4-8a7e-4e0b-aa62-2a2ec840e879","timestamp":"21/09/2025, 11.56.35","url":"/auth/change-password","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+7ms","reqId":"79d338d2-fdac-437a-a652-efb160b05a3d","timestamp":"21/09/2025, 11.56.42","url":"/delete/alan","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+4ms","reqId":"79d338d2-fdac-437a-a652-efb160b05a3d","timestamp":"21/09/2025, 11.56.42","url":"/auth/delete/alan","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+10ms","reqId":"422c95ee-31a8-49b3-b3c4-dd2a90069abf","timestamp":"21/09/2025, 11.57.27","url":"/delete/alan","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+7ms","reqId":"422c95ee-31a8-49b3-b3c4-dd2a90069abf","timestamp":"21/09/2025, 11.57.27","url":"/auth/delete/alan","user":"alan"}
+{"addition":{"module":"Auth Router"},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+14ms","reqId":"c142bbdd-c13c-4af2-918f-4ae11168a99b","timestamp":"21/09/2025, 11.57.32","url":"/delete/adit","user":"alan"}
+{"addition":{},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+3ms","reqId":"c142bbdd-c13c-4af2-918f-4ae11168a99b","timestamp":"21/09/2025, 11.57.32","url":"/auth/delete/adit","user":"alan"}

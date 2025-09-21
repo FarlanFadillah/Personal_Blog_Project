@@ -1,4 +1,5 @@
 const validator = require('express-validator');
+const {CustomError} = require("../utils/errors");
 
 const loginValidator = [
     validator.body('username').notEmpty().withMessage('Username / Email is required'),
@@ -8,22 +9,22 @@ const loginValidator = [
 const accountProfileValidator = [
     validator.body('username')
         .trim()
-        .escape()
         .isLength({min : 4}).withMessage('Usernames must be at least 4 characters long')
         .notEmpty().withMessage('Username / Email is required')
-        .matches(/^[^<>]*$/).withMessage("username can't contain html tags"),
+        .matches(/^[^<>]*$/).withMessage("username can't contain html tags")
+        .escape(),
 
     validator.body('first_name')
         .trim()
-        .escape()
         .notEmpty().withMessage('First name is required')
-        .matches(/^[^<>]*$/).withMessage("first name can't contain html tags"),
+        .matches(/^[^<>]*$/).withMessage("first name can't contain html tags")
+        .escape(),
 
     validator.body('last_name')
         .trim()
-        .escape()
         .notEmpty().withMessage('Last name is required')
-        .matches(/^[^<>]*$/).withMessage("last name can't contain html tags"),
+        .matches(/^[^<>]*$/).withMessage("last name can't contain html tags")
+        .escape(),
 
     validator.body('email')
         .normalizeEmail()
@@ -39,7 +40,7 @@ const passwordValidator = [
         .optional({checkFalsy : true})
         .custom((value, {req}) =>{
             if(req.body.password && value !== req.body.password){
-                throw new Error('Password confirmation does not match password');
+                throw new CustomError('Password confirmation does not match password', 'warning');
             }
             return true;
         }),
@@ -47,7 +48,7 @@ const passwordValidator = [
         .optional({checkFalsy : true})
         .custom((value, {req}) =>{
             if(req.body.password && value === req.body.password){
-                throw new Error('Your new password should not be the same as your old one');
+                throw new CustomError('Your new password should not be the same as your old one', 'warning');
             }
             return true;
         })
