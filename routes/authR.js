@@ -19,6 +19,8 @@ const {validatorErrorHandler} = require('../middlewares/validatorErr');
 const {authentication, adminAuthentication} = require('../middlewares/authentication');
 const {authErrorHandler} = require('../middlewares/errorsHandler');
 
+// rate limiter module
+const {loginLimiter} = require('../middlewares/rateLimiter');
 
 // prevent user to access the root route
 router.get('/', (req, res) => {
@@ -27,7 +29,7 @@ router.get('/', (req, res) => {
 
 router.route('/login')
     .get(renderLoginForm)
-    .post(...loginValidator, validatorErrorHandler, login);
+    .post(...loginValidator, validatorErrorHandler, loginLimiter, login);
 
 router.route('/logout')
     .post(logout);

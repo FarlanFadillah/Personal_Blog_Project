@@ -32,7 +32,7 @@ function log(req, type, message, addition = {}){
         url : req.url,
         ip : req.ip,
         reqId : req.id,
-        user : req.session.user?.username ?? 'guest'
+        user : req.session.user?.username ?? 'guest',
     })
 }
 

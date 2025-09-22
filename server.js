@@ -68,6 +68,8 @@ app.use((req, res, next)=>{
     req.session.messages = [];
     next();
 })
+
+
 app.use('/auth', authRouter);
 app.use('/admin', dashboardRouter);
 app.use('/article', articleRouter);
