@@ -522,3 +522,24 @@
 {"addition":{},"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","ms":"+3ms","reqId":"c142bbdd-c13c-4af2-918f-4ae11168a99b","timestamp":"21/09/2025, 11.57.32","url":"/auth/delete/adit","user":"alan"}
 {"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+23ms","reqId":"e4400cc8-02e8-4cba-839d-de3d2e81f632","timestamp":"21/09/2025, 11.57.32","url":"/admin"}
 {"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+4s","reqId":"3143a240-6f22-4fa2-8d68-ccdcaeaf8d28","timestamp":"21/09/2025, 11.57.35","url":"/auth/users"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"5194c2b3-7e4f-4d9b-8774-82b69d7614a9","timestamp":"22/09/2025, 12.59.10","url":"/"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+20ms","reqId":"f82cc5ba-5a15-4db2-be77-bd8da678125a","timestamp":"22/09/2025, 12.59.10","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+4s","reqId":"b094c2c4-895b-4c48-b26e-948a3966d6f8","timestamp":"22/09/2025, 12.59.14","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12ms","reqId":"6fc4102d-ecfe-4ba3-84cc-3ad9b2da62dd","timestamp":"22/09/2025, 12.59.14","url":"/auth/login"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+56ms","reqId":"f7c75e70-d15e-452a-84cf-05ee61c0f9e9","timestamp":"22/09/2025, 12.59.14","url":"/favicon.ico"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+11ms","reqId":"fea2aa57-bec7-4b56-b75a-92e216f1cc07","timestamp":"22/09/2025, 12.59.14","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+5s","reqId":"9edb14a2-e02b-407c-a2ea-8d06e3c4bc95","timestamp":"22/09/2025, 12.59.20","url":"/auth/login"}
+{"addition":{"isAdmin":1,"module":"Auth Ctrl","username":"alan"},"ip":"::1","level":"info","message":"User logged in","method":"POST","ms":"+283ms","reqId":"9edb14a2-e02b-407c-a2ea-8d06e3c4bc95","timestamp":"22/09/2025, 12.59.20","url":"/login","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+7ms","reqId":"694e9f13-2379-4846-9826-39f82e00d22d","timestamp":"22/09/2025, 12.59.20","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+36s","reqId":"d2402c32-b3b7-49a7-93a5-924753ae0e09","timestamp":"22/09/2025, 12.59.55","url":"/article/edit/17"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+10s","reqId":"d6f9729b-27f3-42f4-bbc0-4e3f4e55e28a","timestamp":"22/09/2025, 13.00.05","url":"/article/edit/17"}
+{"addition":{"module":"Article Ctrl"},"ip":"::1","level":"info","message":"Article edited","method":"POST","ms":"+16ms","reqId":"d6f9729b-27f3-42f4-bbc0-4e3f4e55e28a","timestamp":"22/09/2025, 13.00.05","url":"/edit/17","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+9ms","reqId":"cd2489cf-f94e-4e1d-ba55-beffcf8dc8d5","timestamp":"22/09/2025, 13.00.05","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"e20d72ee-31ff-4d6a-b275-efdd9e04fcc4","timestamp":"22/09/2025, 13.00.19","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3s","reqId":"54244049-7a1c-4267-bf78-5fa961ca30b9","timestamp":"22/09/2025, 13.00.22","url":"/view/article/17"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3m","reqId":"064f9789-6583-4f72-8739-4cc021ac6ff0","timestamp":"22/09/2025, 13.03.27","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3s","reqId":"9564f641-93b2-400b-b53c-c04bcea246e8","timestamp":"22/09/2025, 13.03.31","url":"/view/article/23"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+43s","reqId":"ec0add9c-20e3-42aa-ac05-6e0c7e5621db","timestamp":"22/09/2025, 13.04.13","url":"/view/article/23"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","reqId":"38eb6318-a17a-4d7d-9a96-630a8fce6edd","timestamp":"22/09/2025, 13.04.14","url":"/home"}
+{"ip":"::ffff:192.168.1.7","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"de990ab2-64f8-4723-9f11-efea5736ab62","timestamp":"22/09/2025, 16.48.59","url":"/"}
+{"ip":"::ffff:192.168.1.7","level":"info","message":"Incoming Request :","method":"GET","ms":"+23ms","reqId":"b3359ce0-4b9b-4173-b53f-a05b46203b89","timestamp":"22/09/2025, 16.48.59","url":"/home"}
