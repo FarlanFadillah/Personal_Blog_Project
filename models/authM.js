@@ -1,13 +1,5 @@
-const sqlite3 = require('sqlite3');
 const {CustomError} = require('../utils/errors')
-
-const db = new sqlite3.Database('./db/main.sqlite3', (err) => {
-    if(err) console.log(err.message);
-    console.log('Users Database Connected');
-    db.run("PRAGMA foreign_keys = ON", (err)=>{
-        if(err) console.log(err.message);
-    });
-})
+const db = require('./db');
 
 db.serialize(() => {
     db.run(`CREATE TABLE IF NOT EXISTS users (

@@ -1,0 +1,21 @@
+<%if(images !== undefined){%>
+<div class="container my-4">
+    <h2 class="mb-3">Uploaded Images</h2>
+    <table class="table table-striped table-hover align-middle text-center">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Preview</th>
+            <th scope="col">URL</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%for(image of images) {%>
+        <tr>
+            <td><img src="<%= image.filePath %>" alt="<%= image.id %>" class="img-fluid rounded" style="max-width: 150px;"></td>
+            <td><code><%= image.filePath %></code></td>
+        </tr>
+        <%}%>
+        </tbody>
+    </table>
+</div>
+<%}%>

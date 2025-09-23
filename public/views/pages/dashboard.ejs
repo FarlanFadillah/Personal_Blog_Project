@@ -89,7 +89,14 @@
             <form id="logout_form" action="/auth/logout" method="post"></form>
         </div>
     </div>
-
+    <div class="mb-3">
+        <form id="upload_image_form" action="/upload/image" method="post" enctype="multipart/form-data">
+            <label for="formFile" class="form-label">Upload Image</label>
+            <input class="form-control" type="file" id="formFile" name="image">
+            <button type="submit" class="btn btn-sm btn-dark" onclick="document.getElementById('upload_image_form').submit()">Upload</button>
+        </form>
+    </div>
+    <%-include('../partials/image_list')%>
     <!--Flash Message Section-->
     <%-include('../partials/flash_message')%>
 

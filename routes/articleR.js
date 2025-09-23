@@ -8,13 +8,20 @@ const {renderNewArticlePage,
 
 const {idValidator} = require('../validators/articleV');
 
-const {articleErrorHandler} = require('../middlewares/errorsHandler')
+const {articleErrorHandler} = require('../middlewares/errorsHandler');
+
+const upload = require('../middlewares/image_uploader');
 
 router.use(authentication);
 
 router.route('/new')
     .get(renderNewArticlePage)
     .post(newArticle);
+
+router.post('/upload/image', upload.single('image'), (req, res) => {
+    console.log('uploading image')
+    res.redirect('/admin')
+});
 
 router.route('/edit/:id')
     .get(...idValidator, renderEditArticlePage)

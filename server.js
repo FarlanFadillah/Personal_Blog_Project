@@ -23,6 +23,7 @@ const authRouter = require('./routes/authR');
 const dashboardRouter = require('./routes/adminR');
 const rootRouter = require('./routes/rootR');
 const articleRouter = require('./routes/articleR');
+const uploadRouter = require('./routes/uploadR');
 
 
 // middleware modules
@@ -44,7 +45,7 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public/static')));
 
 // upload files
-app.use(express.static(path.join(__dirname, 'public/uploads')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -79,6 +80,7 @@ app.use((req, res, next)=>{
 app.use('/auth', authRouter);
 app.use('/admin', dashboardRouter);
 app.use('/article', articleRouter);
+app.use('/upload', uploadRouter);
 app.use('/', rootRouter);
 
 

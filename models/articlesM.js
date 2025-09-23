@@ -1,16 +1,9 @@
-const sqlite3 = require('sqlite3');
 const {readFile, writeFile, unlink} = require('fs');
-const {CustomError} = require('../utils/errors')
-const db = new sqlite3.Database('./db/main.sqlite3', (err) => {
-    if(err) console.log(err.message);
-    db.run("PRAGMA foreign_keys = ON", (err)=>{
-        if(err) console.log(err.message);
-    });
-    console.log('Articles Database Connected');
-})
+const {CustomError} = require('../utils/errors');
+const db = require('./db');
 
 db.serialize(() => {
-    db.run('PRAGMA foreign_keys = OFF'); // disable during migration to avoid constraint errors
+    //db.run('PRAGMA foreign_keys = OFF'); // disable during migration to avoid constraint errors
     db.run(`CREATE TABLE IF NOT EXISTS articles (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT,
