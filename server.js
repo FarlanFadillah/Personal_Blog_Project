@@ -39,7 +39,13 @@ app.set('views', path.join(__dirname, 'public/views'));
 
 app.use(cors());
 app.use(morgan('dev'));
+
+// static file such as ejs/js/css
 app.use(express.static(path.join(__dirname, 'public/static')));
+
+// upload files
+app.use(express.static(path.join(__dirname, 'public/uploads')));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -79,7 +85,7 @@ app.use('/', rootRouter);
 
 // handling the route that does not exist
 app.use((req, res)=>{
-    res.redirect('/home');
+    res.status(404).json({success : false});
 });
 
 // errors handler middleware

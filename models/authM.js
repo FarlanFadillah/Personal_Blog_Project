@@ -31,7 +31,7 @@ function addUser(username, first_name, last_name, email, hash, isAdmin = false){
             [username, first_name, last_name, isAdmin, email, hash],
             (err)=>{
             if(err){
-                if(err.message.includes('UNIQUE')) reject(new Error('User already exists'));
+                if(err.message.includes('UNIQUE')) reject(new CustomError('User already exists', 'warn'));
                 else reject(new CustomError(err.message, 'error'));
             }
             resolve(null);
@@ -93,7 +93,7 @@ function deleteUser(username){
     return new Promise((resolve, reject)=>{
         db.run(`DELETE FROM users WHERE username = ?`, [username], (err, )=>{
             if(err) {
-                if(err.message.includes('SQLITE_CONSTRAINT')) reject(new CustomError("Can't Delete this user", 'warning'));
+                if(err.message.includes('SQLITE_CONSTRAINT')) reject(new CustomError("Can't Delete this user", 'warn'));
                 reject(new CustomError(err.message, 'error'));
             }
             resolve(null);

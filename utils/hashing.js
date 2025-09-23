@@ -14,7 +14,7 @@ async function passValidate(pass, hash){
     return new Promise((resolve, reject)=>{
         bcrypt.compare(pass, hash, (err, result)=>{
             if(err) reject(err);
-            result ? resolve(null) : reject(new CustomError('Password mismatch', 'warning'));
+            result ? resolve(null) : reject(new CustomError('Password mismatch', 'warn'));
         })
     })
 }

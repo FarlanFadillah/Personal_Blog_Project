@@ -81,7 +81,7 @@ const validationColumn = ['id', 'title', 'filePath', 'createdAt', 'updatedAt', '
 function getArticleByIdWithSpecificColumn(id, columns) {
 
     const filteredColumns = columns.filter(col => validationColumn.includes(col));
-    if(!filteredColumns.length) throw new CustomError('No valid columns requested', 'warning');
+    if(!filteredColumns.length) throw new CustomError('No valid columns requested', 'warn');
 
 
     return new Promise((resolve, reject) => {

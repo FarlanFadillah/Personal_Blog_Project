@@ -37,7 +37,7 @@ const login = asyncHandler(async (req, res, next) => {
     else user = await authM.getUser(username);
 
     // check if user is existing
-    if(user === undefined) next(new CustomError(`User not found!`, 'warning'));
+    if(user === undefined) return next(new CustomError(`User not found!`, 'warn'));
 
     // Take the password from input, encrypt it, and check if it matches the one saved for the user.
     await hasher.passValidate(password, user.hash);
@@ -104,7 +104,7 @@ const register = asyncHandler( async (req, res, next) => {
 const deleteUserByUsername = asyncHandler(async (req, res) => {
     const {username} = req.params;
     await authM.deleteUser(username);
-    addMessage(req, 'success', 'User deleted successfully.');
+    addMessage(req, 'info', 'User deleted successfully.');
 
     // log
     log(req, 'info', 'User deleted successfully',
@@ -119,12 +119,12 @@ const updateUserPassword = asyncHandler(async (req, res, next) => {
     const {old_password, password} = req.body;
 
     const user = await authM.getUser(username);
-    if(user === undefined) return next(new CustomError(`User not found!`, 'warning'));
+    if(user === undefined) return next(new CustomError(`User not found!`, 'warn'));
 
     await hasher.passValidate(old_password, user.hash);
 
     await authM.updateOneColumn(username, 'hash', await hasher.genHashBcrypt(password));
-    addMessage(req, 'success', 'Password updated successfully.');
+    addMessage(req, 'info', 'Password updated successfully.');
 
     // log
     log(req, 'info', 'Password updated successfully',

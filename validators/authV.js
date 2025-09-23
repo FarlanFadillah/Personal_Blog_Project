@@ -40,7 +40,7 @@ const passwordValidator = [
         .optional({checkFalsy : true})
         .custom((value, {req}) =>{
             if(req.body.password && value !== req.body.password){
-                throw new CustomError('Password confirmation does not match password', 'warning');
+                throw new CustomError('Password confirmation does not match password', 'warn');
             }
             return true;
         }),
@@ -48,7 +48,7 @@ const passwordValidator = [
         .optional({checkFalsy : true})
         .custom((value, {req}) =>{
             if(req.body.password && value === req.body.password){
-                throw new CustomError('Your new password should not be the same as your old one', 'warning');
+                throw new CustomError('Your new password should not be the same as your old one', 'warn');
             }
             return true;
         })

@@ -9,8 +9,8 @@ function validatorErrorHandler (req, res, next) {
     if (!errors.isEmpty()) {
         console.log('Validation error occured :');
         for(errMsg of errors.array()) {
-            log(req, 'error', errMsg.msg, {module : 'ValErr Middwre'});
-            addMessage(req, 'warning', errMsg.msg);
+            log(req, 'warn', errMsg.msg, {module : 'ValErr Mddlwre'});
+            addMessage(req, 'warn', errMsg.msg);
         }
         return next(new CustomError("Validation failed.", 'warning'));
     }

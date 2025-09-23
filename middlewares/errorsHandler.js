@@ -46,9 +46,10 @@ function authErrorHandler (error, req, res, next) {
     // log
     log(req, 'error', error.message, {module : 'Auth Router'});
 
-    urlMap.forEach(({url, redirect})=>{
-        if(req.originalUrl.includes(url)) res.redirect(redirect);
-    })
+    const matched = urlMap.find(({url}) => req.originalUrl.includes(url))
+    if(matched) {
+        return res.redirect(matched.redirect);
+    }
     next(error);
 }
 
