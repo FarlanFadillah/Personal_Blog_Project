@@ -1,5 +1,6 @@
 const multer = require('multer');
 const path = require('path');
+const {CustomError} = require("../utils/errors");
 
 // Multer storage configuration
 const storage = multer.diskStorage({
@@ -11,6 +12,15 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({storage: storage});
+const upload = multer({
+    storage: storage,
+    fileFilter: function (req, file, cb) {
+        if(file.mimetype.startsWith('image/')) {
+            cb(null, true);
+        } else {
+            cb(new CustomError('File only support image', 'warning'), false);
+        }
+    }
+});
 
 module.exports = upload;

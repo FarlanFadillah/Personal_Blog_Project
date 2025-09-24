@@ -9,8 +9,8 @@ function renderHtml(markdown) {
 
     const safeHtml = DOMPurify.sanitize(rawHtml, {
         USE_PROFILES: { html: true },
-        FORBID_TAGS: ["style", "iframe", "object", "embed"],
-        FORBID_ATTR : ['style', 'class'],
+        FORBID_TAGS: ["style", "iframe", "object", "embed", "script"],
+        FORBID_ATTR : ["style", "class", "onerror", "onclick"],
         ALLOW_DATA_ATTR : false // disallow data-* attributes (sometimes abused)
     });
     const dom = new JSDOM(safeHtml);

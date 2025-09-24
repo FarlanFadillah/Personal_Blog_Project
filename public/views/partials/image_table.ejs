@@ -2,7 +2,7 @@
 <div class="mb-3">
     <form id="upload_image_form" action="/upload/image" method="post" enctype="multipart/form-data">
         <label for="formFile" class="form-label">Upload Image</label>
-        <input class="form-control" type="file" id="formFile" name="image">
+        <input class="form-control" accept="image/*" type="file" id="formFile" name="image">
         <button type="submit" class="btn btn-sm btn-dark" onclick="document.getElementById('upload_image_form').submit()">Upload</button>
     </form>
 </div>

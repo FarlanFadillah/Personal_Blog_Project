@@ -2538,3 +2538,35 @@
 {"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+13s","reqId":"b2c67914-407c-4e5b-a4ad-6238251082a2","timestamp":"24/09/2025, 13.13.59","url":"/admin"}
 {"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+9s","reqId":"4d437f29-5657-4d24-ba44-4ea192d30318","timestamp":"24/09/2025, 13.14.09","url":"/article/form"}
 {"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+12s","reqId":"3debfcf9-a207-4465-a803-8e7ad4f041c3","timestamp":"24/09/2025, 13.14.21","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+0ms","reqId":"6b67c139-7764-48e1-8ad6-88eb35ddac6c","timestamp":"24/09/2025, 13.27.43","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+104ms","reqId":"f035dd3d-f47c-474b-b7d9-13eacfd77410","timestamp":"24/09/2025, 13.27.43","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+10s","reqId":"0a189243-c60d-40cf-b92d-8003192a4aad","timestamp":"24/09/2025, 13.27.53","url":"/article/form"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+13s","reqId":"87267d04-1041-4790-baa3-57761ba8ac2c","timestamp":"24/09/2025, 13.28.06","url":"/article/form"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+37m","reqId":"1c7c4a9f-2678-443a-94a7-10ceb5e2224d","timestamp":"24/09/2025, 14.04.39","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+4s","reqId":"a6cc10f2-4d26-49d1-b4c4-d0bcd40188ba","timestamp":"24/09/2025, 14.04.43","url":"/auth/logout"}
+{"ip":"::1","level":"info","message":"User logged out","method":"POST","module":"Auth Ctrl","ms":"+1ms","reqId":"a6cc10f2-4d26-49d1-b4c4-d0bcd40188ba","timestamp":"24/09/2025, 14.04.43","url":"/logout","user":"adit","username":"adit"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+7ms","reqId":"7cceade0-e2de-4c7f-a8a7-8645b429e278","timestamp":"24/09/2025, 14.04.43","url":"/auth/login"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+3s","reqId":"c6fd0c4f-e5fb-4cfa-ba5d-0383582bcfe3","timestamp":"24/09/2025, 14.04.46","url":"/auth/login"}
+{"ip":"::1","isAdmin":1,"level":"info","message":"User logged in","method":"POST","module":"Auth Ctrl","ms":"+272ms","reqId":"c6fd0c4f-e5fb-4cfa-ba5d-0383582bcfe3","timestamp":"24/09/2025, 14.04.46","url":"/login","user":"alan","username":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+6ms","reqId":"b8df3ee9-937b-4fea-a9c0-0a922b5fe8d4","timestamp":"24/09/2025, 14.04.46","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3s","reqId":"40ccf842-a3af-4eba-a872-484c58586532","timestamp":"24/09/2025, 14.04.49","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+4s","reqId":"a11a8833-9183-4fe0-8bcd-c3375a0939b1","timestamp":"24/09/2025, 14.04.53","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+2s","reqId":"66908ce6-7346-409d-bbfd-3f348f0a9e37","timestamp":"24/09/2025, 14.04.56","url":"/view/article/13"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+5m","reqId":"593edb7d-6b9b-44ea-814b-d0c835b22d3f","timestamp":"24/09/2025, 14.09.55","url":"/view/article/13"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","reqId":"1004aa53-bb24-4013-8cc8-250afa749f34","timestamp":"24/09/2025, 14.09.57","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+5s","reqId":"fca3d041-7c12-44e8-96eb-98460ab0257c","timestamp":"24/09/2025, 14.10.01","url":"/article/form"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3s","reqId":"bb0db67c-fbea-45a0-b6cd-7fdea7441863","timestamp":"24/09/2025, 14.10.04","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","reqId":"d360576b-113d-4458-9231-1023c4ad7cb1","timestamp":"24/09/2025, 14.10.05","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+4s","reqId":"3d406a8c-df87-47ac-8047-5713dc17d861","timestamp":"24/09/2025, 14.10.09","url":"/auth/users"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"POST","ms":"+3s","reqId":"925a01bd-a3d9-4a25-8a33-1d16bfc5973d","timestamp":"24/09/2025, 14.10.12","url":"/auth/delete/adit"}
+{"ip":"::1","level":"error","message":"Can't Delete this user","method":"POST","module":"Auth Router","ms":"+3ms","reqId":"925a01bd-a3d9-4a25-8a33-1d16bfc5973d","timestamp":"24/09/2025, 14.10.12","url":"/delete/adit","user":"alan"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+7ms","reqId":"92961bae-4e94-4f06-a5c8-6114d119f7ab","timestamp":"24/09/2025, 14.10.12","url":"/auth/users"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","reqId":"7b1d8b3f-bd5d-4e50-a74d-59c23e88c5d7","timestamp":"24/09/2025, 14.10.13","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","reqId":"ca820c90-2502-4ec6-a51f-85b58a469ed8","timestamp":"24/09/2025, 14.10.14","url":"/auth/register"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","reqId":"e06332ae-f399-46c8-9181-751ca834db44","timestamp":"24/09/2025, 14.10.16","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","reqId":"e7fcb223-3c3b-423a-afb3-f8cc51b91cf9","timestamp":"24/09/2025, 14.10.17","url":"/auth/settings"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+1s","reqId":"2d5b2c53-5d2e-4cf8-9b35-7ef7132518ae","timestamp":"24/09/2025, 14.10.18","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+53s","reqId":"50e1ea04-cf70-4fd3-9356-e12f25dc06d7","timestamp":"24/09/2025, 14.11.11","url":"/home"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+2s","reqId":"1fde0e14-5bfd-4a1f-945d-8eb7b68653d1","timestamp":"24/09/2025, 14.11.14","url":"/admin"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+7s","reqId":"cbbfa59d-dda4-4582-921f-619fad7fcc09","timestamp":"24/09/2025, 14.11.21","url":"/view/article/29"}
+{"ip":"::1","level":"info","message":"Incoming Request :","method":"GET","ms":"+3s","reqId":"0f1b32a3-a27d-48fe-ba32-350cc1e26249","timestamp":"24/09/2025, 14.11.23","url":"/view/article/27"}
