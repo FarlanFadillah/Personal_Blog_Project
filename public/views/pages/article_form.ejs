@@ -8,7 +8,7 @@
                 <div class="card shadow">
                     <div class="card-body">
                         <h3 class="card-title mb-4 text-center"><%=title%></h3>
-
+                        <%-include('../partials/flash_message')%>
                         <form action="<%=route%>" method="post">
                             <div class="mb-3">
                                 <label for="title" class="form-label">Article Title</label>
@@ -18,35 +18,30 @@
                                     <input type="text" name="title" class="form-control" id="title" placeholder="Enter title">
                                 <%}%>
                             </div>
-
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">Upload Image Here</label>
-                                <input class="form-control" type="file" id="formFile">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="date" class="form-label">Publishing Date</label>
-                                <input type="date" class="form-control" id="date">
-                            </div>
+<!--                            <div class="mb-3">-->
+<!--                                <label for="date" class="form-label">Publishing Date</label>-->
+<!--                                <input type="date" class="form-control" id="date">-->
+<!--                            </div>-->
 
                             <div class="mb-3">
                                 <label for="content" class="form-label">Content</label>
                                 <%if(content){%>
                                     <textarea class="form-control" name="content" id="content" rows="6" placeholder="Write your content here"><%=content%></textarea>
                                 <%} else {%>
-                                    <textarea class="form-control" name="content" id="content" rows="6" placeholder="Write your content here"></textarea>
+                                    <textarea class="form-control" name="content" id="content" rows="6" placeholder="Write your content here (plain text/html/markdown)"></textarea>
                                 <%}%>
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100">Publish</button>
-                            <a href="/admin" class="btn btn-danger w-100 mt-3">Cancel</a>
+                            <a href="/admin" class="btn btn-outline-secondary w-100 mt-3">Back To Dashboard</a>
                         </form>
 
                     </div>
                 </div>
             </div>
         </div>
+        <%-include('../partials/image_table')%>
     </div>
-
+    <script src="/main.js"></script>
 </body>
 </html>

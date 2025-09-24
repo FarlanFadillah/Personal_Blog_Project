@@ -10,7 +10,9 @@ const uploadImage = asyncHandler(async (req, res, next) => {
     const username = req.session.user.username;
 
     await imageM.addImage(filePath, username);
-    res.redirect('/admin');
+    const backURL = req.header('Referer') || '/';
+
+    res.redirect(backURL);
 });
 
 const getAllImages = asyncHandler(async (req, res, next) => {
@@ -18,7 +20,25 @@ const getAllImages = asyncHandler(async (req, res, next) => {
     next();
 });
 
+const deleteImage = asyncHandler(async (req, res, next) => {
+    const {id} = req.query;
+
+    if(id === undefined || id === null) {
+        return next(new CustomError('No id', 'error'));
+    }
+
+    const image = await imageM.getImageById(id);
+    if(!image) return next(new CustomError('Image not found', 'error'));
+
+    await imageM.deleteImageDBS(id);
+    await imageM.deleteImageFile(image.filePath);
+
+    // 'Referer' get the previous url
+    res.redirect(req.header('Referer') || '/');
+})
+
 module.exports = {
     uploadImage,
     getAllImages,
+    deleteImage,
 }

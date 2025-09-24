@@ -82,10 +82,13 @@ const updateUser = asyncHandler(async (req, res, next) => {
     }
     req.session.isAuthenticated = true;
 
+    // flash message
+    addMessage(req, 'info', 'User updated successfully');
+
     // log
     log(req, 'info', 'User profile updated',
         {username : req.session.user.username, module : 'Auth Ctrl'});
-    res.status(200).redirect('/admin');
+    res.status(200).redirect('/auth/settings');
 });
 
 const register = asyncHandler( async (req, res, next) => {
@@ -93,6 +96,9 @@ const register = asyncHandler( async (req, res, next) => {
     const {password} = req.body;
     const hash = await hasher.genHashBcrypt(password);
     await authM.addUser(username, first_name, last_name, email, hash);
+
+    // flash message
+    addMessage(req, 'info', 'User registered successfully');
 
     // log
     log(req, 'info', 'New User registered',
@@ -130,7 +136,7 @@ const updateUserPassword = asyncHandler(async (req, res, next) => {
     log(req, 'info', 'Password updated successfully',
         {username : username, module : 'Auth Ctrl'});
 
-    res.status(200).redirect('/admin');
+    res.status(200).redirect('/auth/settings');
 });
 
 module.exports = {

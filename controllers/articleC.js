@@ -4,18 +4,17 @@ const {log} = require("../utils/logger");
 const {addMessage} = require("../utils/flashMessage");
 const {CustomError} = require('../utils/errors')
 
-const renderNewArticlePage = asyncHandler(async (req, res, next) => {
-    res.status(200).render('pages/article_form', {
+const renderFormArticlePage = asyncHandler(async (req, res, next) => {
+    const {id} = req.query;
+
+    if(id === undefined || id === null) {
+        return res.status(200).render('pages/article_form', {
             title : 'New Article',
-            route : '/article/new',
+            route : '/article/save',
             article_title : null,
             content : null});
-});
+    }
 
-const renderEditArticlePage = asyncHandler(async (req, res, next) => {
-    const {id} = req.params;
-    if(id === undefined) return next(new Error('Id is not defined'));
-    
     const article = await articleModel.getArticleById(id);
     if(!article) return next(new CustomError('Article not found', 'error'));
 
@@ -24,13 +23,15 @@ const renderEditArticlePage = asyncHandler(async (req, res, next) => {
 
     res.status(200).render('pages/article_form', {
         title : 'Edit Article',
-        route : '/article/edit/' + id,
+        route : '/article/save?id=' + id,
         article_title : article.title,
         content : content.content});
+
 });
 
 const newArticle = asyncHandler(async (req, res, next) => {
     const {title, content} = req.body;
+
     const username = req.session.user.username;
     const path = './public/articles/' + username + '_' + Date.now() + '.json';
 
@@ -38,7 +39,7 @@ const newArticle = asyncHandler(async (req, res, next) => {
     await articleModel.createArticle(title, path, username);
 
     // flash message
-    addMessage(req, 'info', 'Article created');
+    addMessage(req, 'info', 'Article created Successfully');
 
     // log
     log(req, 'info', 'Article created', {module : 'Article Ctrl'});
@@ -47,19 +48,26 @@ const newArticle = asyncHandler(async (req, res, next) => {
 });
 
 const editArticle = asyncHandler(async(req, res, next) => {
-    const {id} = req.params;
+    const {id} = req.query;
+
+    // id is undefined go to next middleware => (newArticle)
+    if(id === undefined || id === null) {
+        console.log('id is undefined');
+        return next();
+    }
+
     const {title, content} = req.body;
     const {filePath} = await articleModel.getArticleById(id);
 
     await articleModel.editArticleJson(filePath, title, content, id);
 
     // flash message
-    addMessage(req, 'info', 'Article edited');
+    addMessage(req, 'info', 'Article edited Successfully');
 
     // log
     log(req, 'info', 'Article edited', {module : 'Article Ctrl'});
 
-    res.redirect('/admin');
+    res.redirect(req.header('Referer') || '/admin');
 });
 
 const deleteArticle = asyncHandler(async (req, res, next) => {
@@ -81,9 +89,8 @@ const deleteArticle = asyncHandler(async (req, res, next) => {
 
 
 module.exports = {
-    renderEditArticlePage,
-    renderNewArticlePage, 
     editArticle,
     deleteArticle,
-    newArticle    
+    newArticle,
+    renderFormArticlePage
 }

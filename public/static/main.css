@@ -1,0 +1,11 @@
+.article-image-wrapper {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.article-image {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

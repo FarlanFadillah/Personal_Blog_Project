@@ -25,7 +25,7 @@ function articleErrorHandler(error, req, res, next) {
 
     // log
     log(req, 'error', error.message, {module : 'Article Router'});
-    res.redirect('/admin');
+    res.redirect(req.header('Referer') || '/');
 }
 
 
@@ -48,7 +48,7 @@ function authErrorHandler (error, req, res, next) {
 
     const matched = urlMap.find(({url}) => req.originalUrl.includes(url))
     if(matched) {
-        return res.redirect(matched.redirect);
+        return res.redirect(req.header('Referer') || '/');
     }
     next(error);
 }
@@ -62,10 +62,21 @@ function rootErrorHandler (error, req, res, next) {
     res.redirect('/home');
 }
 
+
+function uploadErrorHandler (error, req, res, next) {
+    // flash message
+    addMessage(req, error.type, error.message);
+
+    // log
+    log(req, 'error', error.message, {module : 'Upload Router'});
+    res.redirect('/admin');
+}
+
 module.exports = {
     lastErrorHandler,
     authErrorHandler,
     adminErrorHandler,
     rootErrorHandler,
-    articleErrorHandler
+    articleErrorHandler,
+    uploadErrorHandler,
 };

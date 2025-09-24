@@ -1,31 +1,28 @@
 const router = require('express').Router();
 const { authentication } = require('../middlewares/authentication');
-const {renderNewArticlePage,
-        newArticle,
-        renderEditArticlePage,
+const { newArticle,
+        renderFormArticlePage,
         editArticle,
         deleteArticle} = require('../controllers/articleC');
 
-const {idValidator} = require('../validators/articleV');
+
+const {getAllImages} = require('../controllers/uploadC');
+
+const {idValidator, titleValidator, contentValidator} = require('../validators/articleV');
 
 const {articleErrorHandler} = require('../middlewares/errorsHandler');
 
 const upload = require('../middlewares/image_uploader');
 
+const {validatorErrorHandler} = require('../middlewares/validatorErr');
+
 router.use(authentication);
 
-router.route('/new')
-    .get(renderNewArticlePage)
-    .post(newArticle);
+router.route('/form')
+    .get(getAllImages, renderFormArticlePage);
 
-router.post('/upload/image', upload.single('image'), (req, res) => {
-    console.log('uploading image')
-    res.redirect('/admin')
-});
-
-router.route('/edit/:id')
-    .get(...idValidator, renderEditArticlePage)
-    .post(editArticle);
+router.route('/save')
+    .post(...titleValidator, ...contentValidator, validatorErrorHandler, editArticle, newArticle);
 
 router.route('/delete/:id')
     .post(deleteArticle);

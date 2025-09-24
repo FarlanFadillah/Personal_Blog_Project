@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Create New Article</h5>
                     <p class="card-text">Write and publish a brand new article.</p>
-                    <a href="/article/new" class="btn btn-primary w-100">New Article</a>
+                    <a href="/article/form" class="btn btn-primary w-100">New Article</a>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
                             <td><%=value.title%></td>
                             <td><%=value.createdAt%></td>
                             <td>
-                                <a href="/article/edit/<%=value.id%>" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="/article/form?id=<%=value.id%>" class="btn btn-sm btn-warning">Edit</a>
                                 <button class="btn btn-sm btn-danger" form="delete_form_<%=value.id%>"  id="delete_btn" type="submit">Delete</button>
                                 <form id="delete_form_<%=value.id%>" onsubmit="return confirm('Are you sure you want to delete this article? This action cannot be undone');" action="/article/delete/<%=value.id%>" method="post"></form>
                             </td>
@@ -89,14 +89,8 @@
             <form id="logout_form" action="/auth/logout" method="post"></form>
         </div>
     </div>
-    <div class="mb-3">
-        <form id="upload_image_form" action="/upload/image" method="post" enctype="multipart/form-data">
-            <label for="formFile" class="form-label">Upload Image</label>
-            <input class="form-control" type="file" id="formFile" name="image">
-            <button type="submit" class="btn btn-sm btn-dark" onclick="document.getElementById('upload_image_form').submit()">Upload</button>
-        </form>
-    </div>
-    <%-include('../partials/image_list')%>
+
+    <%-include('../partials/image_table')%>
     <!--Flash Message Section-->
     <%-include('../partials/flash_message')%>
 

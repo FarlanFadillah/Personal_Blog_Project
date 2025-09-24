@@ -1,0 +1,34 @@
+<%if(images !== undefined){%>
+<div class="mb-3">
+    <form id="upload_image_form" action="/upload/image" method="post" enctype="multipart/form-data">
+        <label for="formFile" class="form-label">Upload Image</label>
+        <input class="form-control" type="file" id="formFile" name="image">
+        <button type="submit" class="btn btn-sm btn-dark" onclick="document.getElementById('upload_image_form').submit()">Upload</button>
+    </form>
+</div>
+<div class="container my-4">
+    <h2 class="mb-3">Uploaded Images</h2>
+    <table class="table table-striped table-hover align-middle text-center">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Preview</th>
+            <th scope="col">URL</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%for(image of images) {%>
+        <tr>
+            <td><img src="<%= image.filePath %>" alt="<%= image.id %>" class="img-fluid rounded" style="max-width: 150px;"></td>
+            <td><code><%= image.filePath %></code></td>
+            <td>
+                <button class="btn btn-sm btn-danger" form="delete_image_<%=image.id%>" type="submit" onclick="document.getElementById('delete_image').submit()">Delete</button>
+                <form id="delete_image_<%=image.id%>" onsubmit="return confirm('Are you sure you want to delete this image? This action cannot be undone ')" action="/upload/delete?id=<%=image.id%>" method="POST" ></form>
+
+            </td>
+        </tr>
+        <%}%>
+        </tbody>
+    </table>
+</div>
+<%}%>
